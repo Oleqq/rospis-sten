@@ -1,0 +1,69 @@
+// header scss
+.header {
+
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+
+    z-index: 100;
+
+    // header__wrapper
+    &__wrapper {
+
+    }
+
+    // header__logo
+    &__logo {
+        h2 {
+            
+            font-weight: bold;
+            margin-bottom: 0;
+            font-size: 1rem;
+            color: #072c50;
+        }
+    }
+
+    // header__nav
+    &__nav {
+
+        // header__nav > ul
+        ul {
+           
+            li {
+
+            }
+            a {
+                font-family: Encode Sans;
+                
+            }
+            img {
+                object-fit: cover;
+                object-position: center;
+                max-width: 16px;
+                aspect-ratio: 1;
+            }
+        }
+    }
+
+    // header__socials
+    &__socials {
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background-color: #b2d7fa;
+        }
+    }
+}
+
+
+
+
+.call-button {
+    border-radius: 50px;
+    background-color: transparent;
+    border: 2px solid #b2d7fa;
+    color: #b2d7fa;
+}

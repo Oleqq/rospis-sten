@@ -3,3 +3,18 @@
 @import "modules/variables.scss";
 @import "modules/custom.scss";
 @import "modules/animation.scss";
+
+
+
+// header
+@import "modules/header";
+
+
+.hero {
+    background: rgb(178,215,250);
+    background: linear-gradient(180deg, rgba(178,215,250,1) 0%, rgba(58,113,77,1) 100%);
+
+    height: 110dvh;
+
+    padding-top: 240px;
+}

@@ -14,7 +14,56 @@
     background: rgb(178,215,250);
     background: linear-gradient(180deg, rgba(178,215,250,1) 0%, rgba(58,113,77,1) 100%);
 
-    height: 110dvh;
+    height: 100dvh;
+    
+    padding-top: 120px;
 
-    padding-top: 240px;
+
+    &__container {
+
+    }
+
+    // hero__wrapper
+    &__wrapper {
+        
+    }
+
+    // hero__text
+    &__text {
+
+    }
+    
+    // hero__tips
+    &__tips {
+
+        p {
+            margin-bottom: 0;
+        }
+
+        // hero__tips--badge
+        &--badge {
+
+        }
+    }
+    
+    // hero_photo
+    &__photo {
+        max-width: 400px;
+        max-height: 600px;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+            }
+    }
+
+
+
+    
+}
+
+.benefits {
+
+    padding: 240px 0;
 }

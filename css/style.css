@@ -599,10 +599,9 @@ body {
 }
 
 .hero {
-  background: rgb(178, 215, 250);
-  background: linear-gradient(180deg, rgb(178, 215, 250) 65%, rgb(58, 113, 77) 100%);
   height: 100dvh;
   padding-top: 182px;
+  transition: 2s ease;
 }
 .hero h1, .hero h2, .hero p {
   font-family: Montserrat;
@@ -682,12 +681,35 @@ body {
   flex-direction: column;
   gap: calc(var(--bs-gutter-x) * 1);
 }
+.gallery-index__col {
+  transition: 0.2s ease;
+}
+.gallery-index__col a {
+  display: inline-block; /* Убедитесь, что ссылка занимает только необходимое пространство */
+  transition: 0.2s ease;
+  border-radius: 52px;
+  width: fit-content;
+  height: fit-content;
+}
+.gallery-index__col a:hover {
+  transition: 0.2s ease;
+}
+.gallery-index__col a:hover img.animate__animated {
+  opacity: 1; /* Показ изображения при наведении */
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.3098039216);
+}
 .gallery-index__col img {
   opacity: 0;
   width: 100%;
   object-fit: cover;
   object-position: center;
-  transition: 2s ease;
+  border-radius: 52px;
+  transition: 0.2s ease; /* Плавное изменение opacity и transform */
+  overflow: hidden;
+}
+.gallery-index__col img.animate__animated:hover {
+  transition: 0.2s ease;
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.3098039216);
 }
 
 .benefits {

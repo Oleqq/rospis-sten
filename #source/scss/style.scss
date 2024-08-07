@@ -9,14 +9,28 @@
 // header
 @import "modules/header";
 
+body {
+    overflow-x: hidden;
+}
 
 .hero {
     background: rgb(178,215,250);
-    background: linear-gradient(180deg, rgba(178,215,250,1) 0%, rgba(58,113,77,1) 100%);
+    background: linear-gradient(180deg, rgba(178,215,250,1) 65%, rgba(58,113,77,1) 100%);
 
     height: 100dvh;
     
-    padding-top: 120px;
+    padding-top: 182px;
+
+
+    h1, h2, p {
+        font-family: Montserrat;
+        font-weight: 700;
+        color: #072c50;
+    }
+    h2 {
+        font-weight: 600;
+
+    }
 
 
     &__container {
@@ -36,8 +50,16 @@
     // hero__tips
     &__tips {
 
+        div {
+            width: fit-content;
+        }
+
         p {
             margin-bottom: 0;
+            font-size: 20px;
+            max-width: 250px;
+            
+            font-weight: 500;
         }
 
         // hero__tips--badge
@@ -48,13 +70,71 @@
     
     // hero_photo
     &__photo {
-        max-width: 400px;
-        max-height: 600px;
+        max-width: 500px;
 
+
+        position: relative;
+
+        transition: 1s ease;
+
+        &:hover {
+            transition: 1s ease;
+            .hero__photo {
+
+                .hero__photo::after {
+                    transition: 1s ease;
+                    transform: rotate(350deg);
+                }
+                 .hero__photo::before {
+                    transition: 1s ease;
+                    transform: rotate(10deg);
+                }
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #b2d7fa;
+            left: 0;
+            
+            border-radius: 5%;
+            transform: rotate(355deg);;
+
+            z-index: 5;
+
+            transition: 1s ease;
+
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #3a714d;
+            left: 0;
+            
+            border-radius: 5%;
+            transform: rotate(5deg);;
+
+            z-index: 4;
+
+            transition: 1s ease;
+
+        }
             img {
                 object-fit: cover;
                 object-position: center;
                 width: 100%;
+                border-radius: 5%;
+
+                z-index: 10;
+
+                position: relative;
+
+                transition: 1s ease;
             }
     }
 
@@ -63,7 +143,45 @@
     
 }
 
+.gallery-index {
+
+    img {
+       
+    }
+
+    .row {
+        
+    }
+
+    // .gallery-index__wrapper 
+    &__wrapper {
+        
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--bs-gutter-x)* 1);;
+        }
+    }
+
+    // .gallery-index__col 
+    &__col {
+        img {
+            opacity: 0;
+
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+    
+            
+    
+            transition: 2s ease;
+        }
+    }
+}
+
 .benefits {
 
     padding: 240px 0;
 }
+

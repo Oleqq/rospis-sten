@@ -87,7 +87,6 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
 }
 
@@ -509,6 +508,7 @@ a {
   margin-bottom: 0;
   font-size: 1rem;
   color: #072c50;
+  font-family: Nunito Sans;
 }
 .header__nav ul a {
   font-family: Encode Sans;
@@ -536,23 +536,94 @@ a {
   color: #b2d7fa;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .hero {
   background: rgb(178, 215, 250);
-  background: linear-gradient(180deg, rgb(178, 215, 250) 0%, rgb(58, 113, 77) 100%);
+  background: linear-gradient(180deg, rgb(178, 215, 250) 65%, rgb(58, 113, 77) 100%);
   height: 100dvh;
-  padding-top: 120px;
+  padding-top: 182px;
+}
+.hero h1, .hero h2, .hero p {
+  font-family: Montserrat;
+  font-weight: 700;
+  color: #072c50;
+}
+.hero h2 {
+  font-weight: 600;
+}
+.hero__tips div {
+  width: fit-content;
 }
 .hero__tips p {
   margin-bottom: 0;
+  font-size: 20px;
+  max-width: 250px;
+  font-weight: 500;
 }
 .hero__photo {
-  max-width: 400px;
-  max-height: 600px;
+  max-width: 500px;
+  position: relative;
+  transition: 1s ease;
+}
+.hero__photo:hover {
+  transition: 1s ease;
+}
+.hero__photo:hover .hero__photo .hero__photo::after {
+  transition: 1s ease;
+  transform: rotate(350deg);
+}
+.hero__photo:hover .hero__photo .hero__photo::before {
+  transition: 1s ease;
+  transform: rotate(10deg);
+}
+.hero__photo::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #b2d7fa;
+  left: 0;
+  border-radius: 5%;
+  transform: rotate(355deg);
+  z-index: 5;
+  transition: 1s ease;
+}
+.hero__photo::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #3a714d;
+  left: 0;
+  border-radius: 5%;
+  transform: rotate(5deg);
+  z-index: 4;
+  transition: 1s ease;
 }
 .hero__photo img {
   object-fit: cover;
   object-position: center;
   width: 100%;
+  border-radius: 5%;
+  z-index: 10;
+  position: relative;
+  transition: 1s ease;
+}
+
+.gallery-index__wrapper > div {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--bs-gutter-x) * 1);
+}
+.gallery-index__col img {
+  opacity: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 2s ease;
 }
 
 .benefits {

@@ -89,7 +89,7 @@
 
                 <div class="hero__wrapper row d-flex flex-row-reverse ">
                     
-                    <div class="col-12 col-md-4 d-flex  justify-content-center  ">
+                    <div class="col-12 col-md-4 d-flex  justify-content-center">
 
                         <div class="hero__photo">
                             <img src="./img/hero-photo.jpeg" alt="">
@@ -143,13 +143,19 @@
 
         </section>
 
-        <section class="index-gallery">
+        <section class="gallery-index">
 
             <div class="container">
                 
+                <div class="gallery-index__title centered">
+                    <h2>
+                        Последние проекты
+                    </h2>
+                </div>
+
                 <div class="row gallery-index__wrapper">
 
-                    <div class="col-12 col-md-6 gallery-index__col">
+                    <div class="col-12 col-md-6 gallery-index__col gallery-index__col-left">
                         <a href="./img/gallery-1.jpeg" data-fancybox="gallery">
                             <img src="./img/gallery-1.jpeg" alt="" class="img-fluid">
                         </a>
@@ -170,7 +176,7 @@
                         </a>
                     </div>
                     
-                    <div class="col-12 col-md-6 gallery-index__col">
+                    <div class="col-12 col-md-6 gallery-index__col gallery-index__col-right">
                         <a href="./img/16.jpeg" data-fancybox="gallery">
                             <img src="./img/16.jpeg" alt="" class="img-fluid">
                         </a>
@@ -261,70 +267,79 @@
 
         <section class="work-process container">
             <h2 class="work-process__title">Как происходит работа?</h2>
-            <div class="row work-process__step">
-                <div class="col-md-6 order-md-2 work-process__image-container">
-                    <img src="https://via.placeholder.com/500x500" alt="Step 1" class="work-process__image img-fluid">
-                </div>
-                <div class="col-md-6 order-md-1 work-process__content">
-                    <div class="work-process__step-number">Шаг 1</div>
-                    <h3 class="work-process__step-title">Утверждение эскиза</h3>
-                    <p class="work-process__step-description">
-                        Вы описываете свои пожелания, я делаю эскиз росписи и показываю, как будут выглядеть на стене ваши идеи.
-                    </p>
-                    <div class="work-process__highlighted-text">
-                        ДИЗАЙН УТВЕРЖДАЕМ <strong>ДО ВАШЕЙ УВЕРЕННОСТИ</strong>
+            <div class="work-process__wrapper">
+
+                <div class="row work-process__step">
+                    <div class="col-md-6 order-md-2 work-process__image-container">
+                        <img src="https://via.placeholder.com/500x500" alt="Step 1" class="work-process__image img-fluid">
                     </div>
-                    <p class="work-process__step-note">
-                        Мы будем делать эскиз, пока Вы не получите эмоциональный отклик, чтобы это было <strong>“ТОЧНО ОНО”</strong>.
-                    </p>
-                </div>
-            </div>
-            <div class="row work-process__step">
-                <div class="col-md-6 work-process__image-container">
-                    <img src="https://via.placeholder.com/500x500" alt="Step 2" class="work-process__image img-fluid">
-                </div>
-                <div class="col-md-6 work-process__content">
-                    <div class="work-process__step-number">Шаг 2</div>
-                    <h3 class="work-process__step-title">Выполнение работы</h3>
-                    <p class="work-process__step-description">
-                        Согласование сроков, стоимости и графика работы, заключаем договор (эскиз является частью договора).
-                    </p>
-                    <div class="work-process__highlighted-text">
-                        ПРЕДСКАЗУЕМЫЙ И <strong>ТОЧНЫЙ РЕЗУЛЬТАТ</strong>
+                    <div class="col-md-6 order-md-1 work-process__content">
+                        <div class="work-process__step-number">Шаг 1</div>
+                        <h3 class="work-process__step-title">Утверждение эскиза</h3>
+                        <p class="work-process__step-description">
+                            Вы описываете свои пожелания, я делаю эскиз росписи и показываю, как будут выглядеть на стене ваши идеи.
+                        </p>
+                        <div class="work-process__highlighted-text">
+                            ДИЗАЙН УТВЕРЖДАЕМ <strong>ДО ВАШЕЙ УВЕРЕННОСТИ</strong>
+                        </div>
+                        <p class="work-process__step-note">
+                            Мы будем делать эскиз, пока Вы не получите эмоциональный отклик, чтобы это было <strong>“ТОЧНО ОНО”</strong>.
+                        </p>
                     </div>
-                    <p class="work-process__step-note">
-                        Вы защищены от разочарований. Гарантируем договором, что рисунок на стене будет выглядеть точно, как на утвержденном эскизе.
-                    </p>
                 </div>
-            </div>
-            <div class="row work-process__step">
-                <div class="col-md-6 order-md-2 work-process__image-container">
-                    <img src="https://via.placeholder.com/500x500" alt="Step 3" class="work-process__image img-fluid">
-                </div>
-                <div class="col-md-6 order-md-1 work-process__content">
-                    <div class="work-process__step-number">Шаг 3</div>
-                    <h3 class="work-process__step-title">Завершение работы</h3>
-                    <p class="work-process__step-description">
-                        По готовности вы принимаете работу, я покрываю её защитным лаком. Роспись в дальнейшем не требует специального ухода и всегда будет оставаться яркой частью вашего интерьера.
-                    </p>
-                    <div class="work-process__highlighted-text">
-                        ЛЮБАЯ СЛОЖНОСТЬ <strong>РИСУНКА</strong>
+                <div class="row work-process__step">
+                    <div class="col-md-6 work-process__image-container">
+                        <img src="https://via.placeholder.com/500x500" alt="Step 2" class="work-process__image img-fluid">
                     </div>
-                    <p class="work-process__step-note">
-                        Любой стиль, включая гиперреализм. Особая технология ярких цветов. Быстрая реализация.
-                    </p>
+                    <div class="col-md-6 work-process__content">
+                        <div class="work-process__step-number">Шаг 2</div>
+                        <h3 class="work-process__step-title">Выполнение работы</h3>
+                        <p class="work-process__step-description">
+                            Согласование сроков, стоимости и графика работы, заключаем договор (эскиз является частью договора).
+                        </p>
+                        <div class="work-process__highlighted-text">
+                            ПРЕДСКАЗУЕМЫЙ И <strong>ТОЧНЫЙ РЕЗУЛЬТАТ</strong>
+                        </div>
+                        <p class="work-process__step-note">
+                            Вы защищены от разочарований. Гарантируем договором, что рисунок на стене будет выглядеть точно, как на утвержденном эскизе.
+                        </p>
+                    </div>
                 </div>
+                <div class="row work-process__step">
+                    <div class="col-md-6 order-md-2 work-process__image-container">
+                        <img src="https://via.placeholder.com/500x500" alt="Step 3" class="work-process__image img-fluid">
+                    </div>
+                    <div class="col-md-6 order-md-1 work-process__content">
+                        <div class="work-process__step-number">Шаг 3</div>
+                        <h3 class="work-process__step-title">Завершение работы</h3>
+                        <p class="work-process__step-description">
+                            По готовности вы принимаете работу, я покрываю её защитным лаком. Роспись в дальнейшем не требует специального ухода и всегда будет оставаться яркой частью вашего интерьера.
+                        </p>
+                        <div class="work-process__highlighted-text">
+                            ЛЮБАЯ СЛОЖНОСТЬ <strong>РИСУНКА</strong>
+                        </div>
+                        <p class="work-process__step-note">
+                            Любой стиль, включая гиперреализм. Особая технология ярких цветов. Быстрая реализация.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section class="faq">
 
             <div class="container faq-section">
-                <h2 class="faq-title">Часто задаваемые вопросы</h2>
+
+                <div class="faq__title">
+                    <h2>Часто задаваемые вопросы</h2>
+                </div>
+
+                
                 <div class="row">
                     <div class="col-12 col-md-8">
                         
-                        <div class="accordion" id="faqAccordion">
+                        <div class="accordion faq__accordion" id="faqAccordion">
                             <div class="card">
                                 <div class="card-header" id="headingOne">
 
@@ -413,7 +428,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
-                        <div class="faq-contact">
+                        <div class="faq__contact">
                             <h4>Не нашли ответ?</h4>
                             <p>Оставьте заявку, я свяжусь с вами в течение рабочего дня и отвечу на вопросы</p>
                             <button class="btn btn-primary">Обратный звонок</button>

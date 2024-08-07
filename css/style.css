@@ -536,6 +536,14 @@ a {
   color: #b2d7fa;
 }
 
+[class*=__title] {
+  opacity: 0;
+  margin-bottom: 4rem;
+}
+[class*=__title] h2 {
+  font-size: 3rem;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -613,6 +621,12 @@ body {
   transition: 1s ease;
 }
 
+.gallery-index {
+  padding-top: 120px;
+}
+.gallery-index__title {
+  text-align: center;
+}
 .gallery-index__wrapper > div {
   display: flex;
   flex-direction: column;
@@ -628,5 +642,27 @@ body {
 
 .benefits {
   padding: 240px 0;
+}
+.benefits__item {
+  opacity: 0;
+}
+
+.work-process__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.work-process__step {
+  opacity: 0;
+}
+
+.faq__accordion .card {
+  opacity: 0;
+}
+.faq__accordion .card.animate__animated {
+  opacity: 1;
+}
+.faq__contact {
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

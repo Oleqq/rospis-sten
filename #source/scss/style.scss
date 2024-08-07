@@ -9,6 +9,20 @@
 // header
 @import "modules/header";
 
+
+[class*="__title"] {
+    opacity: 0;
+    margin-bottom: 4rem;
+    
+    h2 {
+        font-size: 3rem;
+    }
+}
+
+[class*="__title"] {
+   
+}
+
 body {
     overflow-x: hidden;
 }
@@ -145,12 +159,19 @@ body {
 
 .gallery-index {
 
+    padding-top: 120px;
+
     img {
        
     }
 
     .row {
         
+    }
+
+    // .gallery-index__title 
+    &__title {
+        text-align: center;
     }
 
     // .gallery-index__wrapper 
@@ -183,5 +204,49 @@ body {
 .benefits {
 
     padding: 240px 0;
+
+    // .benefits__item
+    &__item {
+        opacity: 0;
+    }
 }
 
+
+// work-procces
+.work-process {
+
+    // .work-proccess__wrapper
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    // .work-process__step 
+    &__step {
+        opacity: 0;
+        
+    }
+}
+
+
+// faq 
+.faq {
+
+    // .faq__accordion
+    &__accordion {
+
+        .card {
+            opacity: 0;
+
+            &.animate__animated {
+                opacity: 1;
+            }
+        }
+    }
+
+    // .faq__contact
+    &__contact {
+        opacity: 0;
+    }
+}

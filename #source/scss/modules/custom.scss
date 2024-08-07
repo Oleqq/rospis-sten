@@ -99,3 +99,46 @@ a {
     background-color: #5E9C48;
   }
   
+
+
+
+  // bootstrap custom
+  .card-header {
+    padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+    margin-bottom: 0;
+    color: #0c4e91;
+    background-color: var(--bs-card-cap-bg);
+    border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+// font awesome custom
+.fas.fa-chevron-down.rotate-icon {
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-shrink: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #082c50;
+    border-radius: 50%;
+
+    color: #fff;
+    font-size: 16px;
+
+    transition: .2s ease;
+
+    
+}

@@ -6,6 +6,26 @@
 
     z-index: 100;
 
+    transition: 1s ease;
+
+    // имеет класс sticky-active
+    &.sticky-active {
+        transition: 1s ease;
+
+        background-color: #3a714d;
+
+        backdrop-filter: blur(120px); /* Эффект размытия фона */
+        -webkit-backdrop-filter: blur(210px); /* ВебКит для Safari и Chrome */
+
+        h2 {
+            transition: 1s ease;
+            color: #fff;
+        }
+        
+    }
+
+
+
     // header__wrapper
     &__wrapper {
 
@@ -14,6 +34,8 @@
     // header__logo
     &__logo {
         h2 {
+
+            transition: 1s ease;
             
             font-weight: bold;
             margin-bottom: 0;

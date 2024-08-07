@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.header');
+    const stickyClass = 'sticky-active';
+    const stickyOffset = header.offsetHeight; // The height of the header
+
+    function handleScroll() {
+        if (window.scrollY >= stickyOffset) {
+            header.classList.add(stickyClass);
+        } else {
+            header.classList.remove(stickyClass);
+        }
+    }
+
+    // Initial check
+    handleScroll();
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     // Initialize Fancybox
     Fancybox.bind('[data-fancybox="gallery"]', {});
 
@@ -44,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     new Waypoint({
         element: benefitItems[0], // Точка срабатывания Waypoint
         handler: function() {
-            animateElementsSequentially(benefitItems, 'animate__fadeInUp', 500); // Анимация с задержкой 500 мс между элементами
+            animateElementsSequentially(benefitItems, 'animate__fadeInUp', 700); // Анимация с задержкой 500 мс между элементами
             this.destroy(); // Уничтожить Waypoint после выполнения
         },
         offset: '100%' // Запуск анимации, когда элемент прокручен на 75% в видимой области
@@ -200,3 +220,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    SmoothScroll({
+
+        // Время скролла 400 = 0.4 секунды
+        animationTime : 800,
+        // Размер шага в пикселях
+        stepSize : 75,
+    
+        // Дополнительные настройки:
+    
+        // Ускорение
+        accelerationDelta : 50,
+        // Максимальное ускорение
+        accelerationMax : 2,
+    
+        // Поддержка клавиатуры
+        keyboardSupport : true,
+        // Шаг скролла стрелками на клавиатуре в пикселях
+        arrowScroll : 50,
+    
+        // Pulse (less tweakable)
+        // ratio of "tail" to "acceleration"
+        pulseAlgorithm : true,
+        pulseScale : 4,
+        pulseNormalize : 1,
+    
+        // Поддержка тачпада
+        touchpadSupport : true,
+    })
+    
+});
+
+

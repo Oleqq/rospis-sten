@@ -254,3 +254,148 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const priceRange = document.getElementById('price-range');
+    const priceMinDisplay = document.querySelector('.work-filter__price-min');
+    const priceMaxDisplay = document.querySelector('.work-filter__price-max');
+    const resultItems = document.querySelectorAll('.work-filter__result-item');
+    const filterButton = document.querySelector('.work-filter__button');
+    const clearButton = document.querySelector('.work-filter__button-clear');
+    
+    priceRange.addEventListener('input', function() {
+      const value = this.value;
+      priceMaxDisplay.textContent = `${value},000`;
+    });
+    
+    filterButton.addEventListener('click', function() {
+      const selectedType = document.querySelector('input[name="interior_type"]:checked')?.value;
+      const priceLimit = priceRange.value;
+      
+      resultItems.forEach(function(item) {
+        const itemType = item.dataset.type;
+        const itemPrice = item.dataset.price;
+        
+        if ((itemType === selectedType || !selectedType) && itemPrice <= priceLimit) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  
+    clearButton.addEventListener('click', function() {
+      document.querySelectorAll('input[name="object_type"], input[name="interior_type"]').forEach(function(input) {
+        input.checked = false;
+      });
+      priceRange.value = '27000';
+      priceMinDisplay.textContent = '20,000';
+      priceMaxDisplay.textContent = '54,000';
+      
+      resultItems.forEach(function(item) {
+        item.style.display = 'block';
+      });
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const itemsPerPage = 6;
+    const workItems = document.querySelectorAll('.work-filter__result-item');
+    const paginationContainer = document.querySelector('.pagination');
+    let currentPage = 1;
+  
+    function displayItems(page) {
+      const start = (page - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+  
+      workItems.forEach((item, index) => {
+        if (index >= start && index < end) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  
+    function setupPagination(totalItems, itemsPerPage) {
+      const totalPages = Math.ceil(totalItems / itemsPerPage);
+      paginationContainer.innerHTML = ''; // Clear existing pagination
+  
+      for (let i = 1; i <= totalPages; i++) {
+        const pageItem = document.createElement('li');
+        pageItem.classList.add('page-item');
+        if (i === currentPage) pageItem.classList.add('active');
+  
+        const pageLink = document.createElement('a');
+        pageLink.classList.add('page-link');
+        pageLink.href = '#';
+        pageLink.textContent = i;
+        pageLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          currentPage = i;
+          displayItems(currentPage);
+          setupPagination(totalItems, itemsPerPage); // Update pagination
+        });
+  
+        pageItem.appendChild(pageLink);
+        paginationContainer.appendChild(pageItem);
+      }
+    }
+  
+    // Initial setup
+    displayItems(currentPage);
+    setupPagination(workItems.length, itemsPerPage);
+  });
+  
+
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    Fancybox.bind("[data-fancybox]", {
+      // Custom options if needed
+    });
+  });
+  
+
+// Функция для анимации элементов
+function animateElements() {
+    const items = document.querySelectorAll('.work-filter__result-item');
+
+    items.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add('animate__animated', 'animate__fadeInUp');
+        }, index * 100); // Задержка между элементами 100ms
+    });
+}
+
+// Функция для перезапуска анимации
+function onContentUpdated() {
+    const items = document.querySelectorAll('.work-filter__result-item');
+    items.forEach(item => {
+        item.classList.remove('animate__animated', 'animate__fadeInUp');
+        void item.offsetWidth; // Принудительное пересчитывание стилей
+    });
+
+    // Запускаем анимацию заново
+    animateElements();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Первичная анимация при загрузке страницы
+    animateElements();
+
+    // Обработчики событий для кнопок "Подобрать" и "Очистить"
+    document.querySelector('.work-filter__button').addEventListener('click', function() {
+        // Логика обновления контента...
+        onContentUpdated();  // Перезапуск анимации
+    });
+
+    document.querySelector('.work-filter__button-clear').addEventListener('click', function() {
+        // Логика обновления контента...
+        onContentUpdated();  // Перезапуск анимации
+    });
+
+    // Пример подключения к событию обновления через пагинацию (если используется)
+    document.querySelector('.pagination-link').addEventListener('click', function() {
+        // Логика обновления контента...
+        onContentUpdated();
+    });
+});

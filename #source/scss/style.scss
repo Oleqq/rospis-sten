@@ -40,6 +40,8 @@ body {
 
     transition: 2s ease;
 
+    cursor: default;
+
     h1, h2, p {
         font-family: Montserrat;
         font-weight: 700;
@@ -82,7 +84,12 @@ body {
 
         // hero__tips--badge
         &--badge {
+            svg {
+                width: 32px;
+                height: 32px;
 
+                fill: #082c50;
+            }
         }
     }
     
@@ -155,6 +162,7 @@ body {
                 transition: 1s ease;
             }
     }
+
 
 
 
@@ -231,13 +239,256 @@ body {
     
 }
 
-.benefits {
+.work-filter {
 
-    padding: 240px 0;
+    &__title {
+        // Стили для заголовка секции
+    }
+
+    &__button {
+        // Стили для кнопок
+        background-color: #b2d7fa;
+        border-color: #b2d7fa;
+        color: #000;
+        font-weight: 500;
+
+        transition: .2s ease;
+
+        font-family: 'Montserrat';
+        font-weight: 600;
+
+        border: none;
+
+        &:hover {
+            transition: .2s ease;
+            background-color: #072c50 !important;
+            color: #fff;
+        }
+        &:focus {
+            transition: .2s ease;
+            background-color: #072c50;
+            color: #fff;
+        }
+        &:active {
+            transition: .2s ease;
+            background-color: #08437e;
+            color: #fff;
+        }
+    }
+
+    &__image {
+        transition: .2s ease;
+    }
+
+    &__controls {
+        // Контейнер для элементов управления фильтром
+        // Стили только для элементов, специфичных для данной секции
+
+        &-type {
+            // Контейнер для типа объекта и интерьера
+        }
+
+        &-object {
+            // Отдельный блок для выбора объекта (Дом/Бизнес)
+
+            &-options {
+                // Опции фильтрации внутри объекта (Гостиная, Спальня и т.д.)
+            }
+        }
+
+        &-price {
+            // Блок фильтрации по цене
+
+            &-display {
+                // Отображение диапазона цены
+            }
+        }
+
+        &-label {
+            // Стили для лейблов внутри блока фильтрации
+        }
+
+        &-radio {
+            // Стили для радиокнопок
+        }
+
+        &-radio-label {
+            // Стили для лейблов радиокнопок
+        }
+    }
+
+    &__result {
+        // Контейнер для результатов фильтрации (карточки)
+
+        &-item {
+            // Стили для каждого элемента результата
+            padding-right: calc(var(--bs-gutter-x)* .5);
+            padding-left: calc(var(--bs-gutter-x)* .5);
+            
+            opacity: 0;
+            transition: 1s ease;
+        }
+
+        &-link {
+            // Ссылка на изображение в карточке
+            display: flex;
+
+            transition: .2s ease;
+
+            overflow: hidden;
+
+            &:hover {
+                transition: .2s ease;
+                .work-filter__image {
+                    transition: .2s ease;
+                    transform: scale(1.1);
+                }
+            }
+            
+        }
+
+        &-image {
+            // Стили для изображения
+        }
+
+        &-text {
+            // Стили для текста под изображением
+        }
+
+        
+    }
+
+    &__pagination {
+        // Стили для блока пагинации
+
+        .page-item {
+
+
+            &.active {
+                .page-link {
+                    background-color: #072c50;
+                    border-color: #072c50;
+                    color: #fff;
+                }
+            }
+
+            .page-link {
+
+
+                font-family: 'Montserrat';
+                font-weight: 600;
+        
+                color: #072c50;
+        
+                &:hover {
+                    transition: .2s ease;
+                    background-color: #072c50 !important;
+                    color: #fff;
+                    border-color: #072c50;
+                }
+                &:focus {
+                    transition: .2s ease;
+                    background-color: #072c50;
+                    color: #fff;
+                }
+                &:active {
+                    transition: .2s ease;
+                    background-color: #08437e;
+                    color: #fff;
+                }
+            }
+        }
+
+        
+    }
+}
+
+
+.benefits {
+    background-color: #082c50;
+    padding: 92px 0 120px;
+
+    font-family: 'Montserrat';
+
+    
+
+    // benefits__title
+    &__title {
+        font-family: 'Montserrat';
+        color: #fff;
+
+        max-width: 800px;
+
+        margin: 0 auto 62px;
+
+        text-align: center;
+
+    }
+
+    h5 {
+        font-family: 'Montserrat';
+        font-weight: 600;
+
+        margin: 1rem 0;
+        
+    }
+    p {
+        font-family: 'Montserrat';
+        font-size: 18px;
+
+        margin-top: auto;
+    }
+
+    .row {
+        row-gap: calc(var(--bs-gutter-x)* 1);
+    }
+
 
     // .benefits__item
     &__item {
         opacity: 0;
+        cursor: default;
+
+        
+    }
+
+    &__wrapper {
+        height: 100%;
+        padding: 1rem;
+        background-color: #fff;
+
+
+        color: #072c50;
+
+        border-radius: 12px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        transition: .5s ease;
+
+        &:hover {
+            transition: .5s ease;
+            box-shadow: 0px 0px 20px 0px white;
+        }
+    }
+
+    // .benefits__icon-wrapper
+
+    &__icon-wrapper {
+        max-width: 110px;
+        width: 100px;
+        aspect-ratio: 1 / 1;
+
+        svg {
+            fill: #082c50;
+            rect {
+                fill: #b2d7fa !important;
+            }
+        }
+
     }
 }
 

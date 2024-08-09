@@ -123,7 +123,7 @@
 }
 
 [class*="__title"] {
-   
+   font-weight: 700;
 }
 
 body {
@@ -147,6 +147,14 @@ body {
 
     cursor: default;
 
+    @media (max-width:1440px) {
+        padding-top: 152px;
+    }
+    @media (max-width:767px) {
+        padding-top: 106px;
+        height: 100%;
+    }
+
     h1, h2, p {
         font-family: Montserrat;
         font-weight: 700;
@@ -157,6 +165,19 @@ body {
 
     }
 
+
+    .waveWrapper {
+        @media (max-width:767px) {
+            overflow: hidden;
+            position: relative;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            height: 173px;
+        }
+    }
 
     &__container {
 
@@ -170,10 +191,37 @@ body {
     // hero__text
     &__text {
 
+        h1 {
+            @media (max-width:767px) {
+                font-size: 24px;
+            }
+        }
+        h2 {
+            @media (max-width:767px) {
+                font-size: 20px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            @media (max-width:767px) {
+                font-size: 16px;
+                text-align: left;
+                max-width: unset !important;
+            }
+        }
+
+        @media (max-width:1380px) {
+            margin-top: 0 !important;
+        }
     }
     
     // hero__tips
     &__tips {
+
+        @media (max-width:767px) {
+            row-gap: 24px;
+        }
 
         div {
             width: fit-content;
@@ -181,7 +229,7 @@ body {
 
         p {
             margin-bottom: 0;
-            font-size: 20px;
+            
             max-width: 250px;
             
             font-weight: 500;
@@ -202,13 +250,17 @@ body {
     &__photo {
         max-width: 500px;
 
-
+        height: fit-content;
         position: relative;
 
         transition: 1s ease;
 
         transform: translatey(0px);
         animation: float 10s ease-in-out infinite;
+        
+        @media (max-width:767px) {
+            max-width: 200px;
+        }
 
         &:hover {
             transition: 1s ease;
@@ -736,6 +788,27 @@ body {
     background-color: #b2d7fa;
 
     overflow-x: hidden;
+
+    .btn {
+        background-color: #082c50;
+        border-color: #082c50;
+        
+        font-family: 'Montserrat';
+
+        &.next-step {
+            background-color: #082c50;
+            border-color: #082c50;
+        }
+        &.prev-step {
+            background-color: #b2d7fa;
+            border-color: #b2d7fa;
+        }
+    }
+
+    .form-check, label, input {
+        cursor: pointer;
+        font-family: 'Montserrat';
+    }
 
     // .quiz__wrapper
     &__wrapper {

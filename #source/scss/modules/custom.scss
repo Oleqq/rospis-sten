@@ -21,6 +21,12 @@ html {
 }
 
 
+body {
+    &.fixed {
+        overflow: hidden;
+    }
+}
+
 .container {
     @media (min-width: 1200px) and (max-width: 1920px) {
         max-width: 1140px;
@@ -49,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat';
 }
 
 .row {
@@ -114,8 +120,26 @@ a {
     font-weight: 500;
 }
 
+.progress {
+    &-bar {
+        background-color: #082c50;
+    }
+}
+.form-check-input:checked {
+    background-color: #082c50;
+    border-color: #082c50;
+}
 
+.form-check-input:focus {
+    border-color: #082c50;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem #b2d7fa;
+}
 
+.form-check-input {
+
+    border-color: #b2d7fa;
+}
 
 
 

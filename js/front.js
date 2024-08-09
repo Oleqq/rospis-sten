@@ -447,4 +447,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const callbackButtons = document.querySelectorAll('.callback-btn');
+    const callbackModal = new bootstrap.Modal(document.getElementById('callbackModal'));
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    const body = document.body;
 
+    // Функция для открытия модального окна обратной связи
+    callbackButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            callbackModal.show();
+            body.classList.add('fixed');
+        });
+    });
+
+    // Обработка отправки формы
+    document.getElementById('callbackForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Здесь добавьте логику для отправки данных формы, например, через fetch или XMLHttpRequest
+
+        // После успешной отправки
+        callbackModal.hide();
+        successModal.show();
+
+        // Удаляем класс fixed после показа модального окна об успехе
+        body.classList.remove('fixed');
+    });
+
+    // Закрытие модального окна об успехе и удаление класса fixed
+    document.querySelector('#successModal .btn-close').addEventListener('click', () => {
+        body.classList.remove('fixed');
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggler = document.querySelector('.navbar-toggler');
+    const menu = document.querySelector('.nav-mobile-menu');
+
+    toggler.addEventListener('click', function() {
+        menu.classList.toggle('open');
+        const isExpanded = toggler.getAttribute('aria-expanded') === 'true' || false;
+        toggler.setAttribute('aria-expanded', !isExpanded);
+    });
+});

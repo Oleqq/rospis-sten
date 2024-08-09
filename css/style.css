@@ -483,6 +483,9 @@ a {
   font-weight: 500;
 }
 
+.progress {
+  --bs-progress-bg: #b2d7fa;
+}
 .progress-bar {
   background-color: #082c50;
 }
@@ -688,6 +691,7 @@ a {
 /* Custom styles */
 .navbar-toggler-icon {
   background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Cpath fill="none" stroke="%23333" stroke-width="1.5" d="M1 4h14M1 8h14M1 12h14"/%3E%3C/svg%3E');
+  color: #fff;
 }
 
 .header {
@@ -696,9 +700,14 @@ a {
   transition: 1s ease;
   position: relative;
 }
+.header .waveWrapper {
+  z-index: 10;
+  transform: rotate(180deg);
+  display: none;
+}
 .header.sticky-active {
   transition: 1s ease;
-  background-color: #3a714d;
+  background-color: #082c50;
   backdrop-filter: blur(120px); /* Эффект размытия фона */
   -webkit-backdrop-filter: blur(210px); /* ВебКит для Safari и Chrome */
 }
@@ -706,18 +715,53 @@ a {
   transition: 1s ease;
   color: #fff;
 }
-.header.sticky-active .nav-mobile-menu {
-  background-color: #3a714d;
+.header.sticky-active a {
+  transition: 0.2s ease;
   color: #fff;
+}
+.header.sticky-active .nav-mobile-menu {
+  background-color: #082c50;
+  color: #fff;
+}
+.header.sticky-active .header__wrapper {
+  transition: 1s ease;
+  background-color: #082c50;
+}
+.header .nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #b2d7fa;
+}
+.header .nav-link {
+  padding: 0;
+  display: flex;
 }
 .header .navbar-toggler {
   display: none;
   margin-left: auto;
+  z-index: 110;
 }
 @media (max-width: 991px) {
   .header .navbar-toggler {
     display: block;
   }
+}
+.header a {
+  transition: 0.2s ease;
+  font-size: 20px;
+  color: #082c50;
+  font-weight: 500;
+}
+.header__wrapper {
+  transition: 1s ease;
+  background-color: #fff;
+}
+.header__logo {
+  z-index: 110;
 }
 .header__logo h2 {
   transition: 1s ease;
@@ -726,6 +770,9 @@ a {
   font-size: 1rem;
   color: #072c50;
   font-family: Nunito Sans;
+}
+.header__nav {
+  z-index: 110;
 }
 @media (max-width: 991px) {
   .header__nav-desktop {
@@ -741,7 +788,7 @@ a {
   }
 }
 .header__nav-mobile .nav-mobile-menu {
-  opacity: 0;
+  opacity: 1;
   transition: 1s ease;
   transform: translateY(-300px);
   position: absolute;
@@ -755,12 +802,18 @@ a {
   transition: 1s ease;
   transform: translateY(20px);
 }
+.header__nav-mobile .nav-mobile-menu.open .nav-mobile-menu__wrapper {
+  opacity: 1;
+  transition: 1s cubic-bezier(0.85, 0, 0.25, 1);
+}
 .header__nav-mobile .nav-mobile-menu__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 42px;
+  opacity: 0;
+  transition: 0.25s ease;
 }
 .header__nav-mobile .navbar-nav {
   flex-direction: row;
@@ -781,7 +834,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 32px;
+  width: 42px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: #b2d7fa;
@@ -789,9 +842,48 @@ a {
 
 .call-button {
   border-radius: 50px;
-  background-color: transparent;
+  background-color: #b2d7fa;
   border: 2px solid #b2d7fa;
+  color: #082c50;
+  font-family: "Montserrat";
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.call-button:hover {
+  transition: 0.2s ease;
+  background-color: #b2d7fa !important;
+  color: #082c50 !important;
+}
+.call-button:focus {
+  transition: 0.2s ease;
+  background-color: #072c50;
   color: #b2d7fa;
+}
+.call-button:active {
+  transition: 0.2s ease;
+  background-color: #08437e;
+  color: #b2d7fa;
+}
+
+.footer {
+  background-color: #001a34;
+  font-family: "Montserrat";
+}
+.footer .btn {
+  background-color: #b2d7fa;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.footer a {
+  text-decoration: none;
+}
+.footer p, .footer a {
+  font-size: 18px;
+}
+.footer__policy {
+  border-top: 1px solid #b2d7fa;
+  padding: 42px 0;
 }
 
 [class*=__title] {
@@ -816,7 +908,7 @@ body {
   background: linear-gradient(-1deg, #3a714d, #3a714d, #b2d7fa, #b2d7fa);
   background-size: 100% 300%;
   animation: gradient 12s ease infinite;
-  height: 100dvh;
+  height: 100vh;
   padding-top: 182px;
   transition: 2s ease;
   cursor: default;
@@ -826,7 +918,7 @@ body {
     padding-top: 152px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .hero {
     padding-top: 106px;
     height: 100%;
@@ -840,7 +932,7 @@ body {
 .hero h2 {
   font-weight: 600;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .hero .waveWrapper {
     overflow: hidden;
     position: relative;
@@ -954,10 +1046,38 @@ body {
 }
 
 .gallery-index {
-  padding-top: 120px;
+  padding: 4rem 0;
+}
+.gallery-index .btn {
+  background-color: #082c50;
+  border-color: #082c50;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.2s ease;
+  font-family: "Montserrat";
+  font-weight: 600;
+  border: none;
+}
+.gallery-index .btn:hover {
+  transition: 0.2s ease;
+  background-color: #b2d7fa !important;
+  color: #082c50 !important;
+}
+.gallery-index .btn:focus {
+  transition: 0.2s ease;
+  background-color: #072c50;
+  color: #fff;
+}
+.gallery-index .btn:active {
+  transition: 0.2s ease;
+  background-color: #08437e;
+  color: #fff;
 }
 .gallery-index__title {
   text-align: center;
+}
+.gallery-index__wrapper {
+  margin-bottom: 2rem;
 }
 .gallery-index__wrapper > div {
   display: flex;
@@ -995,10 +1115,90 @@ body {
   box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.3098039216);
 }
 
+.work-filter {
+  padding: 4rem 0;
+  /* Изменение цвета радиокнопки по классу */
+  /* Основной стиль трека и ползунка */
+  /* Для браузеров на основе WebKit */
+  /* Для браузеров на основе Gecko (Firefox) */
+  /* Для браузеров на основе Microsoft Edge и IE */
+}
+.work-filter .work-filter__radio:checked {
+  background-color: #082c50; /* Задний фон при выборе */
+  border-color: #082c50; /* Цвет рамки при выборе */
+}
+.work-filter .work-filter__radio {
+  accent-color: #082c50; /* Цвет радиокнопки */
+}
+.work-filter .work-filter__range {
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #082c50 50%, #b2d7fa 50%);
+  border-radius: 4px;
+  outline: none;
+}
+.work-filter .work-filter__range::-webkit-slider-runnable-track {
+  background: transparent;
+  border-radius: 4px;
+}
+.work-filter .work-filter__range::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #082c50;
+  border: 2px solid #082c50;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px; /* Центрирование ползунка по высоте */
+  position: relative;
+  z-index: 2; /* Ползунок поверх трека */
+}
+.work-filter .work-filter__range::-moz-range-track {
+  background: transparent;
+  border-radius: 4px;
+}
+.work-filter .work-filter__range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #082c50;
+  border: 2px solid #082c50;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+.work-filter .work-filter__range::-moz-range-progress {
+  background-color: #082c50;
+  border-radius: 4px;
+}
+.work-filter .work-filter__range::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.work-filter .work-filter__range::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background: #082c50;
+  border: 2px solid #082c50;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+.work-filter .work-filter__range::-ms-fill-lower {
+  background: #082c50;
+  border-radius: 4px;
+}
+.work-filter .work-filter__range::-ms-fill-upper {
+  background: #b2d7fa;
+  border-radius: 4px;
+}
 .work-filter__button {
-  background-color: #b2d7fa;
-  border-color: #b2d7fa;
-  color: #000;
+  background-color: #082c50;
+  border-color: #082c50;
+  color: #fff;
   font-weight: 500;
   transition: 0.2s ease;
   font-family: "Montserrat";
@@ -1007,8 +1207,8 @@ body {
 }
 .work-filter__button:hover {
   transition: 0.2s ease;
-  background-color: #072c50 !important;
-  color: #fff;
+  background-color: #b2d7fa !important;
+  color: #082c50 !important;
 }
 .work-filter__button:focus {
   transition: 0.2s ease;
@@ -1022,6 +1222,27 @@ body {
 }
 .work-filter__image {
   transition: 0.2s ease;
+}
+.work-filter__type {
+  font-weight: 600;
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+}
+.work-filter__label {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 24px;
+}
+@media (max-width: 991px) {
+  .work-filter__label {
+    display: flex;
+    justify-content: center;
+  }
+}
+.work-filter__controls {
+  border: 1px solid #b2d7fa;
+  padding: 1rem;
+  font-family: "Montserrat";
 }
 .work-filter__result-item {
   padding-right: calc(var(--bs-gutter-x) * 0.5);
@@ -1040,6 +1261,12 @@ body {
 .work-filter__result-link:hover .work-filter__image {
   transition: 0.2s ease;
   transform: scale(1.1);
+}
+.work-filter__result-text {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 .work-filter__pagination .page-item.active .page-link {
   background-color: #072c50;
@@ -1136,7 +1363,11 @@ body {
 
 .faq {
   background-color: #082c50;
-  padding: 62px 0;
+  padding: 6rem 0;
+  position: relative;
+}
+.faq .waveWrapper {
+  transform: rotate(180deg);
 }
 .faq__title {
   color: #b2d7fa;
@@ -1215,6 +1446,8 @@ body {
 
 .quiz {
   background-color: #b2d7fa;
+  padding: 6rem 0 2rem;
+  position: relative;
   overflow-x: hidden;
 }
 .quiz .btn {
@@ -1230,6 +1463,10 @@ body {
   background-color: #b2d7fa;
   border-color: #b2d7fa;
 }
+.quiz .waveWrapper {
+  transform: rotate(180deg);
+  top: 0;
+}
 .quiz .form-check, .quiz label, .quiz input {
   cursor: pointer;
   font-family: "Montserrat";
@@ -1237,7 +1474,71 @@ body {
 .quiz__wrapper {
   background-color: #fff;
   padding: 2rem;
+  position: relative;
+  z-index: 50;
 }
+.quiz-step.first .form-check {
+  padding-left: 0;
+  width: 100%;
+  transition: 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+.quiz-step.first .form-check:hover {
+  transition: 0.2s ease;
+}
+.quiz-step.first .form-check:hover label {
+  transition: 0.2s ease;
+}
+.quiz-step.first .form-check:hover label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 44, 80, 0.3490196078);
+  top: 0;
+  transition: 0.2s ease;
+}
+.quiz-step.first .form-check.chosen label {
+  position: relative;
+  transition: 0.2s ease;
+}
+.quiz-step.first .form-check.chosen label::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 44, 80, 0.3490196078);
+  top: 0;
+  transition: 0.2s ease;
+}
+.quiz-step.first .form-check-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  font-family: "Montserrat";
+  font-size: 18px;
+}
+.quiz-step.first input {
+  opacity: 0;
+}
+.quiz-step.first img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  transition: 0.2s ease;
+  display: flex;
+}
+.quiz-step.first label {
+  position: relative;
+  transition: 0.2s ease;
+}
+.quiz-step.first label::after {
+  transition: 0.2s ease;
+}
+
 .quiz-step {
   display: none;
   opacity: 0;
@@ -1246,5 +1547,113 @@ body {
 .quiz-step.active {
   display: block;
   opacity: 1;
+}
+
+/* Вторая волна */
+.waveWrapperSecond {
+  top: 50%; /* Можно настроить, чтобы волны располагались одна над другой */
+}
+
+.bgTopSecond {
+  z-index: 15;
+  opacity: 0.4;
+}
+
+.bgMiddleSecond {
+  z-index: 10;
+  opacity: 0.7;
+}
+
+.bgBottomSecond {
+  z-index: 5;
+}
+
+.waveTopSecond {
+  background-size: 50% 90px; /* Немного изменён размер */
+}
+
+.waveAnimation .waveTopSecond {
+  animation: move_wave 4s;
+  -webkit-animation: move_wave 4s;
+  animation-delay: 1.5s;
+}
+
+.waveMiddleSecond {
+  background-size: 50% 130px; /* Немного изменён размер */
+}
+
+.waveAnimation .waveMiddleSecond {
+  animation: move_wave 12s linear infinite;
+}
+
+.waveBottomSecond {
+  background-size: 50% 110px; /* Немного изменён размер */
+}
+
+.waveAnimation .waveBottomSecond {
+  animation: move_wave 18s linear infinite;
+}
+
+.waveWrapperFourth {
+  position: absolute;
+  height: 150px;
+  top: 0;
+  margin: unset;
+  transform: rotate(180deg);
+}
+
+.bgTopFourth {
+  z-index: 15;
+  opacity: 0.4;
+}
+
+.bgMiddleFourth {
+  z-index: 10;
+  opacity: 0.7;
+}
+
+.bgBottomFourth {
+  z-index: 5;
+}
+
+.waveTopFourth {
+  background-size: 50% 110px; /* Немного изменён размер */
+}
+@media (max-width: 991px) {
+  .waveTopFourth {
+    background-size: 50% 50px;
+  }
+}
+
+.waveAnimation .waveTopFourth {
+  animation: move_wave 4s;
+  -webkit-animation: move_wave 4s;
+  animation-delay: 1.5s;
+}
+
+.waveMiddleFourth {
+  background-size: 50% 90px; /* Немного изменён размер */
+}
+@media (max-width: 991px) {
+  .waveMiddleFourth {
+    background-size: 50% 70px;
+  }
+}
+
+.waveAnimation .waveMiddleFourth {
+  animation: move_wave 12s linear infinite;
+}
+
+.waveBottomFourth {
+  background-size: 50% 130px; /* Немного изменён размер */
+}
+@media (max-width: 991px) {
+  .waveBottomFourth {
+    background-size: 50% 80px;
+  }
+}
+
+.waveAnimation .waveBottomFourth {
+  animation: move_wave 18s linear infinite;
 }
 /*# sourceMappingURL=style.css.map */

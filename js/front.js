@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     priceRange.addEventListener('input', function() {
       const value = this.value;
-      priceMaxDisplay.textContent = `${value},000`;
+      priceMaxDisplay.textContent = `${value}`;
     });
     
     filterButton.addEventListener('click', function() {
@@ -490,5 +490,47 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.classList.toggle('open');
         const isExpanded = toggler.getAttribute('aria-expanded') === 'true' || false;
         toggler.setAttribute('aria-expanded', !isExpanded);
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const rangeInput = document.getElementById('price-range');
+    const resetButton = document.querySelector('.work-filter__button-clear');
+
+    function updateBackground() {
+        const value = (rangeInput.value - rangeInput.min) / (rangeInput.max - rangeInput.min) * 100;
+        rangeInput.style.background = `linear-gradient(to right, #082c50 ${value}%, #b2d7fa ${value}%)`;
+    }
+
+    // Обновление фона при изменении значения
+    rangeInput.addEventListener('input', updateBackground);
+
+    // Обновление фона при загрузке страницы
+    updateBackground();
+
+    // Сброс слайдера до начального значения
+    resetButton.addEventListener('click', function () {
+        rangeInput.value = rangeInput.defaultValue; // Сброс значения до начального
+        updateBackground(); // Обновление фона
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const formChecks = document.querySelectorAll('.form-check-input');
+
+    formChecks.forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            // Удаляем класс "chosen" у всех form-check
+            formChecks.forEach(function(input) {
+                input.closest('.form-check').classList.remove('chosen');
+            });
+
+            // Добавляем класс "chosen" к родительскому div выбранного radio
+            if (radio.checked) {
+                radio.closest('.form-check').classList.add('chosen');
+            }
+        });
     });
 });

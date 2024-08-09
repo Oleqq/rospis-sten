@@ -139,7 +139,7 @@ body {
     animation: gradient 12s ease infinite;
 
 
-    height: 100dvh;
+    height: 100vh;
     
     padding-top: 182px;
 
@@ -150,7 +150,7 @@ body {
     @media (max-width:1440px) {
         padding-top: 152px;
     }
-    @media (max-width:767px) {
+    @media (max-width:991px) {
         padding-top: 106px;
         height: 100%;
     }
@@ -167,7 +167,7 @@ body {
 
 
     .waveWrapper {
-        @media (max-width:767px) {
+        @media (max-width:991px) {
             overflow: hidden;
             position: relative;
             left: 0;
@@ -331,7 +331,7 @@ body {
 
 .gallery-index {
 
-    padding-top: 120px;
+    padding: 4rem 0;
 
     img {
        
@@ -341,6 +341,33 @@ body {
         
     }
 
+    .btn {
+        background-color: #082c50;
+        border-color: #082c50;
+        color: #fff;
+        font-weight: 500;
+        transition: 0.2s ease;
+        font-family: "Montserrat";
+        font-weight: 600;
+        border: none;
+
+        &:hover {
+            transition: .2s ease;
+            background-color: #b2d7fa !important;
+            color: #082c50 !important;
+        }
+        &:focus {
+            transition: .2s ease;
+            background-color: #072c50;
+            color: #fff;
+        }
+        &:active {
+            transition: .2s ease;
+            background-color: #08437e;
+            color: #fff;
+        }
+    }
+
     // .gallery-index__title 
     &__title {
         text-align: center;
@@ -348,7 +375,8 @@ body {
 
     // .gallery-index__wrapper 
     &__wrapper {
-        
+
+        margin-bottom: 2rem;
 
         & > div {
             display: flex;
@@ -401,15 +429,113 @@ body {
 
 .work-filter {
 
+    padding: 4rem 0;
+
+    /* Изменение цвета радиокнопки по классу */
+.work-filter__radio:checked {
+    background-color: #082c50; /* Задний фон при выборе */
+    border-color: #082c50; /* Цвет рамки при выборе */
+
+}
+
+.work-filter__radio {
+    accent-color: #082c50; /* Цвет радиокнопки */
+}
+
+/* Основной стиль трека и ползунка */
+.work-filter__range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #082c50 50%, #b2d7fa 50%);
+    border-radius: 4px;
+    outline: none;
+
+  
+}
+
+/* Для браузеров на основе WebKit */
+.work-filter__range::-webkit-slider-runnable-track {
+    background: transparent;
+    border-radius: 4px;
+}
+
+.work-filter__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #082c50;
+    border: 2px solid #082c50;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -5px; /* Центрирование ползунка по высоте */
+    position: relative;
+    z-index: 2; /* Ползунок поверх трека */
+}
+
+/* Для браузеров на основе Gecko (Firefox) */
+.work-filter__range::-moz-range-track {
+    background: transparent;
+    border-radius: 4px;
+}
+
+.work-filter__range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #082c50;
+    border: 2px solid #082c50;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.work-filter__range::-moz-range-progress {
+    background-color: #082c50;
+    border-radius: 4px;
+}
+
+/* Для браузеров на основе Microsoft Edge и IE */
+.work-filter__range::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+.work-filter__range::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    background: #082c50;
+    border: 2px solid #082c50;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.work-filter__range::-ms-fill-lower {
+    background: #082c50;
+    border-radius: 4px;
+}
+
+.work-filter__range::-ms-fill-upper {
+    background: #b2d7fa;
+    border-radius: 4px;
+}
+
+
+    
     &__title {
         // Стили для заголовка секции
     }
 
     &__button {
         // Стили для кнопок
-        background-color: #b2d7fa;
-        border-color: #b2d7fa;
-        color: #000;
+        background-color: #082c50;
+        border-color: #082c50;
+        color: #fff;
         font-weight: 500;
 
         transition: .2s ease;
@@ -421,8 +547,8 @@ body {
 
         &:hover {
             transition: .2s ease;
-            background-color: #072c50 !important;
-            color: #fff;
+            background-color: #b2d7fa !important;
+            color: #082c50 !important;
         }
         &:focus {
             transition: .2s ease;
@@ -440,9 +566,35 @@ body {
         transition: .2s ease;
     }
 
+    &__type {
+        font-weight: 600;
+        opacity: .6;
+        margin-bottom: .5rem
+    }
+
+    &__label {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        font-size: 24px;
+
+        @media (max-width:991px) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
     &__controls {
         // Контейнер для элементов управления фильтром
         // Стили только для элементов, специфичных для данной секции
+
+        border: 1px solid #b2d7fa;
+        // background-color: #b2d7fa;
+        padding: 1rem;
+
+        font-family: 'Montserrat';
+
+        
+        
 
         &-type {
             // Контейнер для типа объекта и интерьера
@@ -476,6 +628,8 @@ body {
             // Стили для лейблов радиокнопок
         }
     }
+
+   
 
     &__result {
         // Контейнер для результатов фильтрации (карточки)
@@ -513,6 +667,11 @@ body {
 
         &-text {
             // Стили для текста под изображением
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 1rem;
+
+            margin-top: 1rem;
         }
 
         
@@ -676,7 +835,13 @@ body {
 
     background-color: #082c50;
 
-    padding: 62px 0;
+    padding: 6rem 0;
+
+    position: relative;
+
+    .waveWrapper {
+        transform: rotate(180deg);
+    }
 
     // .faq__title
     &__title {
@@ -787,6 +952,10 @@ body {
 .quiz {
     background-color: #b2d7fa;
 
+    padding: 6rem 0 2rem;
+
+    position: relative;
+
     overflow-x: hidden;
 
     .btn {
@@ -805,6 +974,11 @@ body {
         }
     }
 
+    .waveWrapper {
+        transform: rotate(180deg);
+        top: 0;
+    }
+
     .form-check, label, input {
         cursor: pointer;
         font-family: 'Montserrat';
@@ -815,13 +989,102 @@ body {
         background-color: #fff;
 
         padding: 2rem;
+
+        position: relative;
+        z-index: 50;
     }
 
     // .quiz-step
     &-step {
         
+
+        &.first {
+
+            .form-check {
+                padding-left: 0;
+              
+
+                width: 100%;
+
+                transition: .2s ease;
+                position: relative;
+
+                cursor: pointer;
+
+                &:hover {
+                    transition: .2s ease;
+                    label {
+                        transition: .2s ease;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background-color: #072c5059;
+                            top: 0;
+    
+                            transition: .2s ease;
+                        }   
+                    }
+                }
+
+                &.chosen {
+            
+                  label {
+                    position: relative;
+                    transition: .2s ease;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #072c5059;
+                        top: 0;
+
+                        transition: .2s ease;
+                    }
+                  }
+
+                }
+
+                &-label {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 1rem;
+
+                    font-family: 'Montserrat';
+                    font-size: 18px;
+                }
+            }
+            
+            input {
+                opacity: 0;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+
+                position: relative;
+
+                transition: .2s ease;
+
+                display: flex;
+            }
+            label {
+                position: relative;
+                transition: .2s ease;
+
+                &::after {
+                    transition: .2s ease;
+                }
+            }
+        }
     }
 }
+
 
 
 .quiz-step {
@@ -831,4 +1094,117 @@ body {
 .quiz-step.active {
     display: block;
     opacity: 1;
+}
+
+
+
+
+
+/* Вторая волна */
+.waveWrapperSecond {
+    top: 50%; /* Можно настроить, чтобы волны располагались одна над другой */
+}
+
+.bgTopSecond {
+    z-index: 15;
+    opacity: 0.4;
+}
+
+.bgMiddleSecond {
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.bgBottomSecond {
+    z-index: 5;
+}
+
+.waveTopSecond {
+    background-size: 50% 90px; /* Немного изменён размер */
+}
+
+.waveAnimation .waveTopSecond {
+    animation: move_wave 4s;
+    -webkit-animation: move_wave 4s;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.waveMiddleSecond {
+    background-size: 50% 130px; /* Немного изменён размер */
+}
+
+.waveAnimation .waveMiddleSecond {
+    animation: move_wave 12s linear infinite;
+}
+
+.waveBottomSecond {
+    background-size: 50% 110px; /* Немного изменён размер */
+}
+
+.waveAnimation .waveBottomSecond {
+    animation: move_wave 18s linear infinite;
+}
+
+
+.waveWrapperFourth {
+    position: absolute;
+    height: 150px;
+    top: 0;
+    margin: unset;
+    transform: rotate(180deg);
+}
+
+.bgTopFourth {
+    z-index: 15;
+    opacity: 0.4;
+}
+
+.bgMiddleFourth {
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.bgBottomFourth {
+    z-index: 5;
+}
+
+.waveTopFourth {
+    background-size: 50% 110px; /* Немного изменён размер */
+
+    @media (max-width:991px) {
+        background-size: 50% 50px;
+    }
+}
+
+.waveAnimation .waveTopFourth {
+    animation: move_wave 4s;
+    -webkit-animation: move_wave 4s;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.waveMiddleFourth {
+    background-size: 50% 90px; /* Немного изменён размер */
+
+    @media (max-width:991px) {
+        background-size: 50% 70px;
+    }
+}
+
+.waveAnimation .waveMiddleFourth {
+    animation: move_wave 12s linear infinite;
+}
+
+.waveBottomFourth {
+    background-size: 50% 130px; /* Немного изменён размер */
+
+    @media (max-width:991px) {
+        background-size: 50% 80px;
+    }
+}
+
+.waveAnimation .waveBottomFourth {
+    animation: move_wave 18s linear infinite;
+    
 }

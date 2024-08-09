@@ -121,6 +121,7 @@ a {
 }
 
 .progress {
+    --bs-progress-bg: #b2d7fa;
     &-bar {
         background-color: #082c50;
     }

@@ -895,6 +895,11 @@ a {
   font-family: "Montserrat";
   font-weight: 600;
 }
+@media (max-width: 991px) {
+  [class*=__title] h2 {
+    font-size: 2rem !important;
+  }
+}
 
 [class*=__title] {
   font-weight: 700;
@@ -1109,6 +1114,11 @@ body {
   border-radius: 52px;
   transition: 0.2s ease; /* Плавное изменение opacity и transform */
   overflow: hidden;
+}
+@media (max-width: 991px) {
+  .gallery-index__col img {
+    border-radius: 24px;
+  }
 }
 .gallery-index__col img.animate__animated:hover {
   transition: 0.2s ease;
@@ -1450,6 +1460,11 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+@media (max-width: 767px) {
+  .quiz h2 {
+    font-size: 20px;
+  }
+}
 .quiz .btn {
   background-color: #082c50;
   border-color: #082c50;
@@ -1471,6 +1486,17 @@ body {
   cursor: pointer;
   font-family: "Montserrat";
 }
+@media (max-width: 991px) {
+  .quiz .form-group > div {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 567px) {
+  .quiz .form-group > div {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .quiz__wrapper {
   background-color: #fff;
   padding: 2rem;
@@ -1483,6 +1509,11 @@ body {
   transition: 0.2s ease;
   position: relative;
   cursor: pointer;
+}
+@media (max-width: 991px) {
+  .quiz-step.first .form-check {
+    text-align: center;
+  }
 }
 .quiz-step.first .form-check:hover {
   transition: 0.2s ease;

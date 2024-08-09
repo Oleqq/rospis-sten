@@ -119,6 +119,10 @@
         font-size: 3rem;
         font-family: 'Montserrat';
         font-weight: 600;
+
+        @media (max-width:991px) {
+            font-size: 2rem !important;
+        }
     }
 }
 
@@ -415,6 +419,10 @@ body {
             border-radius: 52px;
             transition: .2s ease; /* Плавное изменение opacity и transform */
             overflow: hidden;
+
+            @media (max-width:991px) {
+                border-radius: 24px;
+            }
 
             &.animate__animated {
                 &:hover {
@@ -958,6 +966,12 @@ body {
 
     overflow-x: hidden;
 
+    h2 {
+        @media (max-width:767px) {
+            font-size: 20px;
+        }
+    }
+
     .btn {
         background-color: #082c50;
         border-color: #082c50;
@@ -982,6 +996,21 @@ body {
     .form-check, label, input {
         cursor: pointer;
         font-family: 'Montserrat';
+
+        
+    }
+
+    .form-group {
+
+        > div {
+            @media (max-width:991px) {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            @media (max-width:567px) {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
     }
 
     // .quiz__wrapper
@@ -1010,6 +1039,10 @@ body {
                 position: relative;
 
                 cursor: pointer;
+
+                @media (max-width:991px) {
+                    text-align: center;
+                }
 
                 &:hover {
                     transition: .2s ease;
@@ -1083,6 +1116,8 @@ body {
             }
         }
     }
+
+
 }
 
 

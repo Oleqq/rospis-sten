@@ -561,6 +561,107 @@ a {
     opacity: 1;
   }
 }
+@keyframes gradient {
+  0% {
+    background-position: 100% 33%; /* Start with green at the bottom third */
+  }
+  50% {
+    background-position: 100% 40%; /* Move green to cover the middle third */
+  }
+  100% {
+    background-position: 100% 33%; /* Return green to the bottom third */
+  }
+}
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+}
+
+.bgTop {
+  z-index: 15;
+  opacity: 0.5;
+}
+
+.bgMiddle {
+  z-index: 10;
+  opacity: 0.75;
+}
+
+.bgBottom {
+  z-index: 5;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.waveTop {
+  background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  animation-delay: 1s;
+}
+
+.waveMiddle {
+  background-size: 50% 120px;
+}
+
+.waveAnimation .waveMiddle {
+  animation: move_wave 10s linear infinite;
+}
+
+.waveBottom {
+  background-size: 50% 100px;
+}
+
+.waveAnimation .waveBottom {
+  animation: move_wave 15s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
 .header {
   background-color: #fff;
   z-index: 100;
@@ -625,6 +726,9 @@ body {
 }
 
 .hero {
+  background: linear-gradient(-1deg, #3a714d, #3a714d, #b2d7fa, #b2d7fa);
+  background-size: 100% 300%;
+  animation: gradient 12s ease infinite;
   height: 100dvh;
   padding-top: 182px;
   transition: 2s ease;
@@ -656,6 +760,8 @@ body {
   max-width: 500px;
   position: relative;
   transition: 1s ease;
+  transform: translatey(0px);
+  animation: float 10s ease-in-out infinite;
 }
 .hero__photo:hover {
   transition: 1s ease;
@@ -673,7 +779,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #b2d7fa;
+  background-color: #a5cbf0;
   left: 0;
   border-radius: 5%;
   transform: rotate(355deg);
@@ -960,5 +1066,23 @@ body {
   transition: 0.2s ease;
   background-color: #08437e;
   color: #fff;
+}
+
+.quiz {
+  background-color: #b2d7fa;
+  overflow-x: hidden;
+}
+.quiz__wrapper {
+  background-color: #fff;
+  padding: 2rem;
+}
+.quiz-step {
+  display: none;
+  opacity: 0;
+}
+
+.quiz-step.active {
+  display: block;
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

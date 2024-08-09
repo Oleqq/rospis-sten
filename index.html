@@ -92,7 +92,7 @@
         <section class="hero"
         style="
             
-            background: linear-gradient(180deg, rgba(178,215,250,1) 65%, rgba(58,113,77,1) 100%);
+           
         "
         >
             
@@ -152,22 +152,29 @@
 
             </div>
 
-        
+            <div class="waveWrapper waveAnimation">
+                <div class="waveWrapperInner bgTop">
+                  <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgMiddle">
+                  <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgBottom">
+                  <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+                </div>
+              </div>
 
         </section>
 
         <section class="gallery-index">
-
             <div class="container">
-                
                 <div class="gallery-index__title centered">
-                    <h2>
-                        Последние проекты
-                    </h2>
+                    <h2>Последние проекты</h2>
                 </div>
-
+        
                 <div class="row gallery-index__wrapper">
                     <div class="col-12 col-md-6 gallery-index__col gallery-index__col-left">
+                        <!-- Первые 4 изображения видны -->
                         <a href="./img/gallery-1.jpeg" data-fancybox="gallery">
                             <img src="./img/gallery-1.jpeg" alt="Gallery Image 1" class="img-fluid" loading="lazy">
                         </a>
@@ -180,21 +187,26 @@
                         <a href="./img/13.jpg" data-fancybox="gallery">
                             <img src="./img/13.jpg" alt="Gallery Image 4" class="img-fluid" loading="lazy">
                         </a>
-                        <a href="./img/14.jpeg" data-fancybox="gallery">
-                            <img src="./img/14.jpeg" alt="Gallery Image 5" class="img-fluid" loading="lazy">
+        
+                        <!-- Следующие 4 изображения скрыты -->
+                        <a href="./img/14.jpeg" data-fancybox="gallery" style="display: none;">
+                            <img src="./img/6.jpeg" alt="Gallery Image 5" class="img-fluid" loading="lazy">
                         </a>
-                        <a href="./img/15.jpeg" data-fancybox="gallery">
+                        <a href="./img/15.jpeg" data-fancybox="gallery" style="display: none;">
                             <img src="./img/15.jpeg" alt="Gallery Image 6" class="img-fluid" loading="lazy">
                         </a>
-                    </div>
-                    
-                    <div class="col-12 col-md-6 gallery-index__col gallery-index__col-right">
-                        <a href="./img/16.jpeg" data-fancybox="gallery">
-                            <img src="./img/16.jpeg" alt="Gallery Image 7" class="img-fluid" loading="lazy">
+                        <a href="./img/16.jpeg" data-fancybox="gallery" style="display: none;">
+                            <img src="./img/3.jpeg" alt="Gallery Image 7" class="img-fluid" loading="lazy">
                         </a>
-                        <a href="./img/1 - заокский 4.jpg" data-fancybox="gallery">
+                        <a href="./img/1 - заокский 4.jpg" data-fancybox="gallery" style="display: none;">
                             <img src="./img/1 - заокский 4.jpg" alt="Gallery Image 8" class="img-fluid" loading="lazy">
                         </a>
+
+                        
+                    </div>
+        
+                    <div class="col-12 col-md-6 gallery-index__col gallery-index__col-right">
+                        <!-- Первые 4 изображения видны -->
                         <a href="./img/2 - мюнхен 1.jpg" data-fancybox="gallery">
                             <img src="./img/2 - мюнхен 1.jpg" alt="Gallery Image 9" class="img-fluid" loading="lazy">
                         </a>
@@ -207,14 +219,29 @@
                         <a href="./img/5.jpeg" data-fancybox="gallery">
                             <img src="./img/5.jpg" alt="Gallery Image 12" class="img-fluid" loading="lazy">
                         </a>
+        
+                        <!-- Следующие 4 изображения скрыты -->
+                        <a href="./img/6.jpeg" data-fancybox="gallery" style="display: none;">
+                            <img src="./img/6.jpeg" alt="Gallery Image 13" class="img-fluid" loading="lazy">
+                        </a>
+                        <a href="./img/7.jpeg" data-fancybox="gallery" style="display: none;">
+                            <img src="./img/4.jpeg" alt="Gallery Image 14" class="img-fluid" loading="lazy">
+                        </a>
+                        <a href="./img/8.jpeg" data-fancybox="gallery" style="display: none;">
+                            <img src="./img/8.jpeg" alt="Gallery Image 15" class="img-fluid" loading="lazy">
+                        </a>
+                        <a href="./img/9.jpeg" data-fancybox="gallery" style="display: none;">
+                            <img src="./img/16.jpeg" alt="Gallery Image 16" class="img-fluid" loading="lazy">
+                        </a>
                     </div>
                 </div>
-                
-
+        
+                <div class="text-center">
+                    <button id="show-more-btn" class="btn btn-primary">Показать больше</button>
+                </div>
             </div>
-
         </section>
-
+        
         <section class="work-filter">
             <div class=" container">
                 <h2 class="work-filter__title text-center">Посмотрите как это может выглядеть у Вас</h2>
@@ -394,6 +421,174 @@
             </div>
               
         </section>
+
+        <section class="quiz"> 
+
+            <div class="container mt-5">
+                <div id="quiz" class="quiz__wrapper">
+                    <div class="quiz-step active">
+                        <h2>1/6. Рассчитайте стоимость росписи</h2>
+                        <div class="form-group">
+                            <label>Выберите сложность рисунка:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="complexity" id="simple" value="simple">
+                                <label class="form-check-label" for="simple">
+                                    <img src="simple.jpg" alt="Simple" class="img-thumbnail"> Простая
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="complexity" id="medium" value="medium">
+                                <label class="form-check-label" for="medium">
+                                    <img src="medium.jpg" alt="Medium" class="img-thumbnail"> Средняя
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="complexity" id="complex" value="complex">
+                                <label class="form-check-label" for="complex">
+                                    <img src="complex.jpg" alt="Complex" class="img-thumbnail"> Сложная
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="complexity" id="ultra-complex" value="ultra-complex">
+                                <label class="form-check-label" for="ultra-complex">
+                                    <img src="ultra-complex.jpg" alt="Ultra Complex" class="img-thumbnail"> Ультрасложная
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="complexity" id="consultation" value="consultation">
+                                <label class="form-check-label" for="consultation">
+                                    <img src="consultation.jpg" alt="Consultation" class="img-thumbnail"> Не знаю, нужна консультация
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary mt-3 next-step">Следующий</button>
+                    </div>
+            
+                    <div class="quiz-step">
+                        <h2>2/6. Какая площадь рисунка?</h2>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="area" id="up-to-10" value="up-to-10">
+                            <label class="form-check-label" for="up-to-10">
+                                До 10 метров
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="area" id="10-20" value="10-20">
+                            <label class="form-check-label" for="10-20">
+                                10-20 метров
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="area" id="20-50" value="20-50">
+                            <label class="form-check-label" for="20-50">
+                                20-50 метров
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="area" id="more-than-50" value="more-than-50">
+                            <label class="form-check-label" for="more-than-50">
+                                От 50 метров
+                            </label>
+                        </div>
+                        <button class="btn btn-primary mt-3 next-step">Следующий</button>
+                        <button class="btn btn-secondary mt-3 prev-step">Назад</button>
+                    </div>
+            
+                    <div class="quiz-step">
+                        <h2>3/6. Стена покрашена/прогрунтована?</h2>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="painted" id="yes" value="yes">
+                            <label class="form-check-label" for="yes">
+                                Да
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="painted" id="no" value="no">
+                            <label class="form-check-label" for="no">
+                                Нет
+                            </label>
+                        </div>
+                        <button class="btn btn-primary mt-3 next-step">Следующий</button>
+                        <button class="btn btn-secondary mt-3 prev-step">Назад</button>
+                    </div>
+            
+                    <div class="quiz-step">
+                        <h2>4/6. Есть картинка, которую хотите на стене? Можно примерную</h2>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="has-image" id="yes-image" value="yes">
+                            <label class="form-check-label" for="yes-image">
+                                Да
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="has-image" id="no-image" value="no">
+                            <label class="form-check-label" for="no-image">
+                                Нет
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="has-image" id="skip" value="skip">
+                            <label class="form-check-label" for="skip">
+                                Пропустить
+                            </label>
+                        </div>
+                        <div class="mt-3">
+                            <label for="imageUpload" class="form-label">Прикрепить файл или фото примера росписи</label>
+                            <input class="form-control" type="file" id="imageUpload">
+                        </div>
+                        <button class="btn btn-primary mt-3 next-step">Следующий</button>
+                        <button class="btn btn-secondary mt-3 prev-step">Назад</button>
+                    </div>
+            
+                    <div class="quiz-step">
+                        <h2>5/6. Отлично! Вы почти у цели.</h2>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="contact-method" id="telegram" value="telegram">
+                            <label class="form-check-label" for="telegram">
+                                В Telegram
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="contact-method" id="whatsapp" value="whatsapp">
+                            <label class="form-check-label" for="whatsapp">
+                                В WhatsApp
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="contact-method" id="call" value="call">
+                            <label class="form-check-label" for="call">
+                                Позвонить, проконсультировать и сообщить стоимость
+                            </label>
+                        </div>
+                        <button class="btn btn-primary mt-3 next-step">Следующий</button>
+                        <button class="btn btn-secondary mt-3 prev-step">Назад</button>
+                    </div>
+            
+                    <div class="quiz-step">
+                        <h2>6/6. Спасибо за ответы!</h2>
+                        <div class="form-group">
+                            <label for="phone">Укажите Ваш номер для связи:</label>
+                            <input type="text" class="form-control" id="phone" placeholder="+7 912 345-67-89">
+                        </div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" id="consent" checked>
+                            <label class="form-check-label" for="consent">
+                                Даю согласие на обработку персональных данных
+                            </label>
+                        </div>
+                        <button class="btn btn-primary mt-3">Отправить</button>
+                        <button class="btn btn-secondary mt-3 prev-step">Назад</button>
+                    </div>
+            
+                    <div class="progress mt-3">
+                        <div class="progress-bar" role="progressbar" style="width: 16.66%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="6"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        
 
         <section class="benefits">
             <div class="container">

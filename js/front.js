@@ -47,7 +47,20 @@ document.addEventListener('DOMContentLoaded', function() {
             offset: '100%'
         });
     });
+
+    // Show more images on button click
+    document.getElementById('show-more-btn').addEventListener('click', function() {
+        var hiddenImages = document.querySelectorAll('.gallery-index__wrapper a[style="display: none;"]');
+        
+        hiddenImages.forEach(function(img) {
+            img.style.display = 'inline-block';
+            img.querySelector('img').classList.add('animate__animated', 'animate__fadeIn');
+        });
+
+
+    });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -399,3 +412,39 @@ document.addEventListener('DOMContentLoaded', function() {
         onContentUpdated();
     });
 });
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    let currentStep = 0;
+    const steps = document.querySelectorAll('.quiz-step');
+    const progressBar = document.querySelector('.progress-bar');
+    
+    function updateProgress() {
+        const progress = ((currentStep + 1) / steps.length) * 100;
+        progressBar.style.width = progress + '%';
+        progressBar.setAttribute('aria-valuenow', currentStep + 1);
+    }
+
+    document.querySelectorAll('.next-step').forEach(button => {
+        button.addEventListener('click', function () {
+            steps[currentStep].classList.remove('active');
+            currentStep = Math.min(currentStep + 1, steps.length - 1);
+            steps[currentStep].classList.add('active');
+            updateProgress();
+        });
+    });
+
+    document.querySelectorAll('.prev-step').forEach(button => {
+        button.addEventListener('click', function () {
+            steps[currentStep].classList.remove('active');
+            currentStep = Math.max(currentStep - 1, 0);
+            steps[currentStep].classList.add('active');
+            updateProgress();
+        });
+    });
+});
+
+

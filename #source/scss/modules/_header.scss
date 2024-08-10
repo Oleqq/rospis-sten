@@ -45,6 +45,17 @@
             color: #fff;
         }
 
+        .navbar-toggler {
+            transition: 1s ease;
+            color: #fff;
+
+            svg {
+                path {
+                    transition: 1s ease;
+                    stroke: #fff;
+                }
+            }
+        }
         .nav-mobile-menu {
             background-color: #082c50;
             color: #fff;
@@ -76,6 +87,17 @@
         margin-left: auto;
 
         z-index: 110;
+
+        transition: 1s ease;
+
+        color: #072c50;
+
+        svg {
+            path {
+                transition: 1s ease;
+                stroke: #072c50;
+            }
+        }
 
         @media (max-width:991px) {
             display: block;
@@ -274,8 +296,44 @@
 
     p, a {
         font-size: 18px;
+
+        
     }
 
+    &__top {
+        @media (max-width:991px) {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+    }
+
+    &__btn {
+        text-align: right;
+        @media (max-width:991px) {
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__socials {
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background-color: #b2d7fa;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                max-width: 16px;
+                aspect-ratio: 1;
+            }
+        }
+    }
 
     &__policy {
         border-top: 1px solid #b2d7fa;

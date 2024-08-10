@@ -355,6 +355,10 @@ body {
         font-weight: 600;
         border: none;
 
+        @media (max-width:467px) {
+            width: 100%;
+        }
+
         &:hover {
             transition: .2s ease;
             background-color: #b2d7fa !important;
@@ -381,6 +385,10 @@ body {
     &__wrapper {
 
         margin-bottom: 2rem;
+
+        @media (max-width:767px) {
+            gap: calc(var(--bs-gutter-x)* 1);
+        }
 
         & > div {
             display: flex;
@@ -568,6 +576,11 @@ body {
             background-color: #08437e;
             color: #fff;
         }
+
+        &-clear {
+            font-family: "Montserrat";
+            font-weight: 600;
+        }
     }
 
     &__image {
@@ -589,6 +602,9 @@ body {
             display: flex;
             justify-content: center;
         }
+        @media (max-width:767px) {
+            font-size: 20px;
+        }
     }
 
     &__controls {
@@ -601,7 +617,9 @@ body {
 
         font-family: 'Montserrat';
 
-        
+        @media (max-width:467px) {
+            font-size: 14px;
+        }
         
 
         &-type {
@@ -823,6 +841,13 @@ body {
 // work-procces
 .work-process {
 
+   padding-top: 4rem;
+   padding-bottom: 4rem;
+
+    &__title {
+        text-align: center;
+    }
+
     // .work-proccess__wrapper
     &__wrapper {
         display: flex;
@@ -830,10 +855,64 @@ body {
         gap: 3rem;
     }
     
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width:767px) {
+            margin-top: 1rem;
+        }
+    }
+
+    
     // .work-process__step 
     &__step {
         opacity: 0;
+        font-family: 'Montserrat';
+
         
+
+        &-number {
+            background-color: #b2d7fa;
+            width: fit-content;
+            padding: 6px 24px;
+            font-weight: 600;
+
+            border-radius: 24px;
+
+            margin-bottom: 24px;
+
+        }
+
+        &-title {
+            font-weight: 700;
+        }
+
+        &-wrapper {
+            padding: 1rem;
+
+            border: 1px solid #082c5070;
+            border-radius: 12px;
+
+            .work-process__highlighted-text {
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &-note {
+            font-style: italic;
+        }
+
+        
+        
+    }
+
+    &__image-container {
+        img {
+            width: 100%;
+        }
     }
 }
 
@@ -849,6 +928,12 @@ body {
 
     .waveWrapper {
         transform: rotate(180deg);
+    }
+
+    .row {
+        @media (max-width:767px) {
+            gap: calc(var(--bs-gutter-x)* 1);
+        }
     }
 
     // .faq__title
@@ -920,6 +1005,8 @@ body {
         color: #000;
         font-family: 'Montserrat';
 
+        border-radius: 12px;
+
         h4 {
             font-family: 'Montserrat';
             font-weight: 600;
@@ -960,7 +1047,7 @@ body {
 .quiz {
     background-color: #b2d7fa;
 
-    padding: 6rem 0 2rem;
+    padding: 8rem 0 2rem;
 
     position: relative;
 

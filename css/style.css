@@ -954,6 +954,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 .hero {
   background: linear-gradient(-1deg, #3a714d, #3a714d, #b2d7fa, #b2d7fa);
   background-size: 100% 300%;

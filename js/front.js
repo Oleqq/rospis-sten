@@ -534,3 +534,30 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+var swiper = new Swiper('.work-process__slider-first', {
+
+    navigation: {
+        nextEl: '.work-process__slider-first-button-next',
+        prevEl: '.work-process__slider-first-button-prev',
+    },
+    pagination: {
+        el: '.work-process__slider-first-pagination',
+        clickable: true,
+    },
+});
+
+
+var swiper2 = new Swiper('.work-process__slider-second', {
+
+    navigation: {
+        nextEl: '.work-process__slider-second-button-next',
+        prevEl: '.work-process__slider-second-button-prev',
+    },
+    pagination: {
+        el: '.work-process__slider-second-pagination',
+        clickable: true,
+    },
+});

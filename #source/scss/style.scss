@@ -869,7 +869,13 @@ main {
         }
     }
 
-    
+    // .work-process__slider
+    &__slider {
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+    }
+
     // .work-process__step 
     &__step {
         opacity: 0;
@@ -914,8 +920,13 @@ main {
     }
 
     &__image-container {
+        aspect-ratio: 1 / 1;
         img {
             width: 100%;
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 1 / 1;
+            height: 100%;
         }
     }
 }
@@ -1092,11 +1103,17 @@ main {
     }
 
     .form-group {
+        margin-top: 1rem;
+        @media (max-width:767px) {
+            margin-bottom:92px;
+        }
 
         > div {
             @media (max-width:991px) {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 62px !important;
+                column-gap: 12px !important;
             }
             @media (max-width:567px) {
                 grid-template-columns: 1fr 1fr;
@@ -1112,6 +1129,10 @@ main {
 
         position: relative;
         z-index: 50;
+
+        @media (max-width:567px) {
+            padding: 1rem;
+        }
     }
 
     // .quiz-step
@@ -1123,6 +1144,7 @@ main {
             .form-check {
                 padding-left: 0;
               
+                text-align: center;
 
                 width: 100%;
 
@@ -1131,8 +1153,13 @@ main {
 
                 cursor: pointer;
 
+                font-size: 18px;
+
+                aspect-ratio: 1 / 1;
+
                 @media (max-width:991px) {
                     text-align: center;
+                    font-size: 14px;
                 }
 
                 &:hover {
@@ -1170,6 +1197,11 @@ main {
                   }
 
                 }
+                &.consultation {
+                    @media (max-width:567px) {
+                        grid-column: 1 / -1;
+                    }
+                }
 
                 &-label {
                     display: flex;
@@ -1179,6 +1211,12 @@ main {
 
                     font-family: 'Montserrat';
                     font-size: 18px;
+
+                    height: 100%;
+
+                    aspect-ratio:  1 / 1;
+
+                    margin-bottom: 12px;
                 }
             }
             
@@ -1196,6 +1234,8 @@ main {
                 transition: .2s ease;
 
                 display: flex;
+
+                height: 100%;
             }
             label {
                 position: relative;
@@ -1205,6 +1245,13 @@ main {
                     transition: .2s ease;
                 }
             }
+
+            button.next-step {
+                @media (max-width:567px) {
+                    width: 100%;
+                }
+            }
+            
         }
     }
 

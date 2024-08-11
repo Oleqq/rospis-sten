@@ -505,6 +505,14 @@ a {
   border-color: #b2d7fa;
 }
 
+.swiper-button-prev, .swiper-button-next {
+  color: #b2d7fa;
+}
+
+.swiper-pagination-bullet-active {
+  background: #082c50;
+}
+
 .fas.fa-chevron-down.rotate-icon {
   width: 32px;
   height: 32px;
@@ -1457,6 +1465,11 @@ main {
     margin-top: 1rem;
   }
 }
+.work-process__slider {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
 .work-process__step {
   opacity: 0;
   font-family: "Montserrat";
@@ -1484,8 +1497,15 @@ main {
 .work-process__step-note {
   font-style: italic;
 }
+.work-process__image-container {
+  aspect-ratio: 1/1;
+}
 .work-process__image-container img {
   width: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+  height: 100%;
 }
 
 .faq {
@@ -1609,10 +1629,20 @@ main {
   cursor: pointer;
   font-family: "Montserrat";
 }
+.quiz .form-group {
+  margin-top: 1rem;
+}
+@media (max-width: 767px) {
+  .quiz .form-group {
+    margin-bottom: 92px;
+  }
+}
 @media (max-width: 991px) {
   .quiz .form-group > div {
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 62px !important;
+    column-gap: 12px !important;
   }
 }
 @media (max-width: 567px) {
@@ -1626,16 +1656,25 @@ main {
   position: relative;
   z-index: 50;
 }
+@media (max-width: 567px) {
+  .quiz__wrapper {
+    padding: 1rem;
+  }
+}
 .quiz-step.first .form-check {
   padding-left: 0;
+  text-align: center;
   width: 100%;
   transition: 0.2s ease;
   position: relative;
   cursor: pointer;
+  font-size: 18px;
+  aspect-ratio: 1/1;
 }
 @media (max-width: 991px) {
   .quiz-step.first .form-check {
     text-align: center;
+    font-size: 14px;
   }
 }
 .quiz-step.first .form-check:hover {
@@ -1666,6 +1705,11 @@ main {
   top: 0;
   transition: 0.2s ease;
 }
+@media (max-width: 567px) {
+  .quiz-step.first .form-check.consultation {
+    grid-column: 1/-1;
+  }
+}
 .quiz-step.first .form-check-label {
   display: flex;
   flex-direction: column;
@@ -1673,6 +1717,9 @@ main {
   gap: 1rem;
   font-family: "Montserrat";
   font-size: 18px;
+  height: 100%;
+  aspect-ratio: 1/1;
+  margin-bottom: 12px;
 }
 .quiz-step.first input {
   opacity: 0;
@@ -1684,6 +1731,7 @@ main {
   position: relative;
   transition: 0.2s ease;
   display: flex;
+  height: 100%;
 }
 .quiz-step.first label {
   position: relative;
@@ -1691,6 +1739,11 @@ main {
 }
 .quiz-step.first label::after {
   transition: 0.2s ease;
+}
+@media (max-width: 567px) {
+  .quiz-step.first button.next-step {
+    width: 100%;
+  }
 }
 
 .quiz-step {

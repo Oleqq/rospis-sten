@@ -449,15 +449,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', () => {
     const callbackButtons = document.querySelectorAll('.callback-btn');
-    const callbackModal = new bootstrap.Modal(document.getElementById('callbackModal'));
-    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-    const body = document.body;
+    const callbackModalElement = document.getElementById('callbackModal');
+    const successModalElement = document.getElementById('successModal');
 
-    // Функция для открытия модального окна обратной связи
+    const callbackModal = new bootstrap.Modal(callbackModalElement);
+    const successModal = new bootstrap.Modal(successModalElement);
+
+    // Открытие модального окна обратной связи
     callbackButtons.forEach(button => {
         button.addEventListener('click', () => {
             callbackModal.show();
-            body.classList.add('fixed');
         });
     });
 
@@ -465,21 +466,36 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('callbackForm').addEventListener('submit', (event) => {
         event.preventDefault();
 
-        // Здесь добавьте логику для отправки данных формы, например, через fetch или XMLHttpRequest
+        // Здесь добавьте логику для отправки данных формы
 
-        // После успешной отправки
+        // Закрываем callbackModal и после этого показываем successModal
         callbackModal.hide();
-        successModal.show();
 
-        // Удаляем класс fixed после показа модального окна об успехе
-        body.classList.remove('fixed');
+        // Используем setTimeout, чтобы дождаться полного закрытия callbackModal
+        setTimeout(() => {
+            successModal.show();
+        }, 500); // 500ms — это время на закрытие модального окна, можно скорректировать
     });
 
-    // Закрытие модального окна об успехе и удаление класса fixed
+    // Закрытие модальных окон по крестику
+    document.querySelector('#callbackModal .btn-close').addEventListener('click', () => {
+        callbackModal.hide();
+    });
+
     document.querySelector('#successModal .btn-close').addEventListener('click', () => {
-        body.classList.remove('fixed');
+        successModal.hide();
+    });
+
+    // Удаление класса 'show' после закрытия любой модалки
+    callbackModalElement.addEventListener('hidden.bs.modal', () => {
+        callbackModalElement.classList.remove('show');
+    });
+
+    successModalElement.addEventListener('hidden.bs.modal', () => {
+        successModalElement.classList.remove('show');
     });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -394,11 +394,7 @@ html {
   }
 }
 
-body.fixed {
-  overflow: hidden;
-}
-
-section {
+body.modal-open {
   overflow: hidden;
 }
 
@@ -507,6 +503,10 @@ a {
 
 .form-check-input {
   border-color: #b2d7fa;
+}
+
+.modal-content {
+  background-color: #b2d7fa;
 }
 
 .swiper-button-prev, .swiper-button-next {
@@ -1782,6 +1782,45 @@ main {
 .quiz-step.active {
   display: block;
   opacity: 1;
+}
+
+.modal-title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.modal input, .modal textarea {
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+.modal input::placeholder, .modal textarea::placeholder {
+  opacity: 0.5;
+  font-weight: 400;
+  font-size: 18px;
+}
+.modal input:focus, .modal textarea:focus {
+  box-shadow: 0 0 14px 0.05rem #082c50;
+}
+.modal button.btn-close:focus {
+  box-shadow: 0 0 14px 0.05rem #082c50;
+}
+
+#callbackModal .form-label {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 18px;
+}
+#callbackModal .btn {
+  background-color: #082c50;
+  border-color: #082c50;
+  transition: 0.2s ease;
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+#callbackModal .btn:hover {
+  transition: 0.2s ease;
+  background-color: #b2d7fa;
+  border-color: #b2d7fa;
+  color: #082c50;
 }
 
 /* Вторая волна */

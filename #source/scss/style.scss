@@ -1301,6 +1301,69 @@ main {
 
 
 
+.modal {
+
+    &-title {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    input, textarea {
+        font-family: 'Montserrat';
+        font-weight: 600;
+
+        &::placeholder {
+            opacity: .5;
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        &:focus {
+            
+            box-shadow: 0 0 14px 0.05rem #082c50;
+        }
+    }
+    button.btn-close {
+
+        &:focus {
+            
+            box-shadow: 0 0 14px 0.05rem #082c50;
+        }
+    }
+}
+
+
+#callbackModal {
+    .form-label {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .btn {
+        background-color: #082c50;
+        border-color: #082c50;
+
+        transition: .2s ease;
+
+        font-family: 'Montserrat';
+        font-weight: 700;
+
+
+        &:hover {
+            transition: .2s ease;
+            background-color: #b2d7fa;
+            border-color: #b2d7fa;
+            color: #082c50;
+        }
+    }
+}
+
+
+
+
+
+
+
 
 
 /* Вторая волна */

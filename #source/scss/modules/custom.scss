@@ -27,6 +27,10 @@ body {
     }
 }
 
+section {
+    overflow: hidden;
+}
+
 .container {
     @media (min-width: 1200px) and (max-width: 1920px) {
         max-width: 1140px;
@@ -145,7 +149,7 @@ a {
 
 
 .swiper-button-prev, .swiper-button-next {
-    color: #b2d7fa;
+    color: #082c50;
 }
 
 .swiper-pagination-bullet {

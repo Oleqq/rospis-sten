@@ -874,7 +874,37 @@ main {
         overflow: hidden;
         position: relative;
         height: 100%;
+
+        &-badge {
+            position: absolute;
+            font-weight: 700;
+            font-size: 24px;
+            padding: .5rem;
+            border-radius: 12px;
+
+            bottom: 24px;
+            right: 24px;
+
+            @media (max-width:467px) {
+                font-size: 20px;
+                bottom: 12px;
+                right: 12px;
+            }
+            
+
+            &.first {
+                background-color: #b2d7fa;
+                color: #082c50;
+            }
+            &.second {
+                background-color: #082c50;
+
+                color: #fff;
+            }
+        }
     }
+
+    
 
     // .work-process__step 
     &__step {

@@ -398,6 +398,10 @@ body.fixed {
   overflow: hidden;
 }
 
+section {
+  overflow: hidden;
+}
+
 @media (min-width: 1200px) and (max-width: 1920px) {
   .container {
     max-width: 1140px;
@@ -506,7 +510,7 @@ a {
 }
 
 .swiper-button-prev, .swiper-button-next {
-  color: #b2d7fa;
+  color: #082c50;
 }
 
 .swiper-pagination-bullet-active {
@@ -1469,6 +1473,30 @@ main {
   overflow: hidden;
   position: relative;
   height: 100%;
+}
+.work-process__slider-badge {
+  position: absolute;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 0.5rem;
+  border-radius: 12px;
+  bottom: 24px;
+  right: 24px;
+}
+@media (max-width: 467px) {
+  .work-process__slider-badge {
+    font-size: 20px;
+    bottom: 12px;
+    right: 12px;
+  }
+}
+.work-process__slider-badge.first {
+  background-color: #b2d7fa;
+  color: #082c50;
+}
+.work-process__slider-badge.second {
+  background-color: #082c50;
+  color: #fff;
 }
 .work-process__step {
   opacity: 0;

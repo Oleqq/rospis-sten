@@ -1,0 +1,62 @@
+// footer scss
+.footer {
+    background-color: #001a34;
+
+    font-family: 'Montserrat';
+
+    .btn {
+        background-color: #b2d7fa;
+        font-weight: 500;
+        transition: 0.2s ease;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    p, a {
+        font-size: 18px;
+
+        
+    }
+
+    &__top {
+        @media (max-width:991px) {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+    }
+
+    &__btn {
+        text-align: right;
+        @media (max-width:991px) {
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__socials {
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background-color: #b2d7fa;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                max-width: 16px;
+                aspect-ratio: 1;
+            }
+        }
+    }
+
+    &__policy {
+        border-top: 1px solid #b2d7fa;
+        padding: 42px 0;
+    }
+}

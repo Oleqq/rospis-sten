@@ -36,6 +36,7 @@ body {
     @media (min-width: 1921px) {
         max-width: 1920px;
     }
+
     @media (min-width: 768px) {
         .container {
             max-width: 867px;
@@ -96,15 +97,15 @@ a {
   
   *::-webkit-scrollbar-thumb {
     border-radius: 0px;
-    background-color: #3A714D;
+    background-color: #082c50;
   }
   
   *::-webkit-scrollbar-thumb:hover {
-    background-color: #509C6A;
+    background-color: #082c50;
   }
   
   *::-webkit-scrollbar-thumb:active {
-    background-color: #5E9C48;
+    background-color: #082c50;
   }
   
 

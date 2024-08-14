@@ -462,15 +462,15 @@ a {
 
 *::-webkit-scrollbar-thumb {
   border-radius: 0px;
-  background-color: #3A714D;
+  background-color: #082c50;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #509C6A;
+  background-color: #082c50;
 }
 
 *::-webkit-scrollbar-thumb:active {
-  background-color: #5E9C48;
+  background-color: #082c50;
 }
 
 .card-header {
@@ -795,7 +795,6 @@ a {
   margin-bottom: 0;
   font-size: 1rem;
   color: #072c50;
-  font-family: Nunito Sans;
 }
 .header__nav {
   z-index: 110;
@@ -846,9 +845,6 @@ a {
   gap: 1rem;
   justify-content: center;
   align-items: center;
-}
-.header__nav ul a {
-  font-family: Encode Sans;
 }
 .header__nav ul img {
   object-fit: cover;
@@ -1394,6 +1390,7 @@ main {
   background-color: #082c50;
   padding: 92px 0 120px;
   font-family: "Montserrat";
+  overflow: hidden;
 }
 .benefits__title {
   font-family: "Montserrat";
@@ -1502,6 +1499,11 @@ main {
   opacity: 0;
   font-family: "Montserrat";
 }
+@media (max-width: 767px) {
+  .work-process__step {
+    gap: calc(var(--bs-gutter-x) * 1);
+  }
+}
 .work-process__step-number {
   background-color: #b2d7fa;
   width: fit-content;
@@ -1509,6 +1511,11 @@ main {
   font-weight: 600;
   border-radius: 24px;
   margin-bottom: 24px;
+}
+@media (max-width: 767px) {
+  .work-process__step-number {
+    border-radius: 12px;
+  }
 }
 .work-process__step-title {
   font-weight: 700;
@@ -1683,6 +1690,8 @@ main {
   padding: 2rem;
   position: relative;
   z-index: 50;
+  opacity: 0;
+  transition: 1s ease;
 }
 @media (max-width: 567px) {
   .quiz__wrapper {

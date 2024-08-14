@@ -62,6 +62,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    var showMoreBtn = document.querySelector('#show-more-btn');
+
+    new Waypoint({
+        element: showMoreBtn, // Точка срабатывания Waypoint для кнопки
+        handler: function() {
+            showMoreBtn.classList.add('animate__animated', 'animate__fadeInUp'); // Применение анимации к кнопке
+            this.destroy(); // Уничтожение Waypoint после выполнения
+        },
+        offset: '100%' // Запуск анимации, когда элемент прокручен на 100% в видимой области
+    });
+});
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     function animateElementsSequentially(elements, animationClass, delay) {
@@ -83,6 +98,61 @@ document.addEventListener('DOMContentLoaded', function() {
         offset: '100%' // Запуск анимации, когда элемент прокручен на 75% в видимой области
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var workFilterControls = document.querySelector('.work-filter__controls');
+
+    new Waypoint({
+        element: workFilterControls, // Точка срабатывания Waypoint для блока
+        handler: function() {
+            workFilterControls.classList.add('animate__animated', 'animate__fadeInUp'); // Применение анимации к блоку
+            this.destroy(); // Уничтожение Waypoint после выполнения
+        },
+        offset: '100%' // Запуск анимации, когда элемент полностью попадает в видимую область
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var workFilterResults = document.querySelector('.work-filter__results');
+
+    new Waypoint({
+        element: workFilterResults, // Точка срабатывания Waypoint для блока
+        handler: function() {
+            workFilterResults.classList.add('animate__animated', 'animate__fadeInUp'); // Применение анимации к блоку
+            this.destroy(); // Уничтожение Waypoint после выполнения
+        },
+        offset: '100%' // Запуск анимации, когда элемент полностью попадает в видимую область
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var workFilterPagination = document.querySelector('.work-filter__pagination');
+
+    new Waypoint({
+        element: workFilterPagination, // Точка срабатывания Waypoint для блока
+        handler: function() {
+            workFilterPagination.classList.add('animate__animated', 'animate__fadeInUp'); // Применение анимации к блоку
+            this.destroy(); // Уничтожение Waypoint после выполнения
+        },
+        offset: '100%' // Запуск анимации, когда элемент полностью попадает в видимую область
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var quizWrapper = document.querySelector('.quiz__wrapper');
+
+    new Waypoint({
+        element: quizWrapper, // Точка срабатывания Waypoint для блока
+        handler: function() {
+            quizWrapper.classList.add('animate__animated', 'animate__fadeInRight'); // Применение анимации к блоку
+            this.destroy(); // Уничтожение Waypoint после выполнения
+        },
+        offset: '100%' // Запуск анимации, когда элемент полностью попадает в видимую область
+    });
+});
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
